@@ -58,6 +58,7 @@ static char** my_completion( const char * text , int start,  int end)
     printf("rl_line_buffer: %s\n", rl_line_buffer);
 //    ret = printf("rl_point: %s\n", rl_point);
     printf("%s\n", buffer);
+    rl_on_new_line();
 
  
     return (matches);
