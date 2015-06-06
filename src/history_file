@@ -1,0 +1,100 @@
+   173	18:29	vi predict.c
+   174	18:30	make
+   175	18:31	vi predict.c
+   176	18:31	make
+   177	18:31	vi predict.c
+   178	18:31	make
+   179	18:31	vi predict.c
+   180	18:31	make
+   181	18:32	vi predict.c
+   182	18:36	make
+   183	18:36	vi predict.c
+   184	18:36	make
+   185	18:36	vi predict.c
+   186	18:37	make
+   187	18:37	vi predict.c
+   188	18:37	vi history_file
+   189	18:38	vi predict.c
+   190	18:38	make
+   191	18:38	vi predict.c
+   192	18:38	vi history_file
+   193	18:38	vi predict.c
+   194	18:39	vi history_file
+   195	18:39	vi history_file
+   196	18:39	vi predict.c
+   197	18:40	make
+   198	18:40	vi predict.c
+   199	18:40	vi history_file
+   200	18:40	vi predict.c
+   201	18:41	vi history_file
+   202	18:41	vi predict.c
+   203	18:42	make
+   204	18:43	vi predict.c
+   205	18:43	make
+   206	18:43	vi predict.c
+   207	18:43	make
+   208	18:44	vi predict.c
+   209	18:44	make
+   210	18:44	vi predict.c
+   211	18:45	make
+   212	18:45	vi predict.c
+   213	18:51	make
+   214	18:51	vi predict.c
+   215	18:51	make
+   216	18:51	vi predict.c
+   217	18:53	make
+   218	18:53	vi predict.c
+   219	18:54	make
+   220	18:54	vi predict.c
+   221	18:54	make
+   222	18:54	vi predict.c
+   223	18:56	vi predict.c
+   224	18:56	make
+   225	18:59	vi predict.c
+   226	19:01	make
+   227	19:01	vi predict.c
+   228	19:01	make
+   229	19:01	vi predict.c
+   230	19:02	make
+   231	19:02	vi predict.c
+   232	19:02	make
+   233	19:03	vi predict.c
+   234	19:03	make
+   235	19:03	vi predict.c
+   236	19:03	make
+   237	19:03	vi predict.c
+   238	19:04	make
+   239	19:04	vi predict.c
+   240	19:04	make
+   241	19:04	vi predict.c
+   242	19:04	make
+   243	19:06	vi predict.c
+   244	19:07	vi predict.c
+   245	19:08	cp ./predict.c ~/htdocs
+   246	19:09	chmod 644 ~/htdocs/predict.c
+   247	19:11	cd ..
+   248	19:11	ls
+   249	19:11	git clone https://github.com/orina1123/smartshell.git
+   250	19:12	cd smartshell/
+   251	19:12	ls
+   252	19:12	cd ..
+   253	19:12	cp predict/predict.c smartshell/src/predict.c
+   254	19:12	ls
+   255	19:13	git commit -m "probability computing ver 1.0"
+   256	19:13	cd smartshell/
+   257	19:13	ls
+   258	19:13	cd src
+   259	19:13	ls
+   260	19:13	cd ../..
+   261	19:13	cd smartshell/
+   262	19:13	cd src
+   263	19:13	cd ..
+   264	19:13	git status
+   265	19:14	git add -A
+   266	19:14	git status
+   267	19:14	git commit -m "probability computing ver 1.0"
+   268	19:14	git push
+   269	19:15	cd ../predict/
+   270	19:15	ls
+   271	19:15	rm history_file
+   272	19:15	history > history_file
