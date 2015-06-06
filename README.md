@@ -1,1 +1,3 @@
 # smartshell
+
+GNU readline Lib
