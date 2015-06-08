@@ -12,7 +12,8 @@ HistoryWindow::HistoryWindow(std::string hist_file, int win_size, int back_size)
 	this->win_size = win_size;
 	this->back_size = back_size;
 
-	this->cmd_cnt = (std::map<std::string, int>*) malloc((this->back_size)*sizeof(std::map<std::string, int>));
+	this->cmd_cnt = (std::map<std::string, int>*) malloc((this->back_size + 1)*sizeof(std::map<std::string, int>));
+	this->c_a_cnt = (std::map<std::string, int>*) malloc((this->back_size + 1)*sizeof(std::map<std::string, int>));
 
 	//load history file 
     read_history(hist_file.c_str());
@@ -52,4 +53,6 @@ void HistoryWindow::add_entry(std::string full_line)
 {
 	//GNU History Library storage
 	add_history(full_line.c_str());
+
+	//TODO
 }
