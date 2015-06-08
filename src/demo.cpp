@@ -79,7 +79,7 @@ static char** my_completion( const char * text , int start,  int end)
  
 	//process matches, remove the part before start
 	int i=0;	
-	while(matches[i] != NULL)
+	while(matches != NULL && matches[i] != NULL)
 	{
 		//printf("^^%s\n", matches[i]);
 		strcpy(matches[i], std::string(matches[i]).substr(start).c_str()); //FIXME (in our own completion_matches func.)
