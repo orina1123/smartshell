@@ -7,5 +7,8 @@ demo: demo.o
 demo.o: demo.cpp
 	${CXX} demo.cpp -c
 
+predict:
+	gcc -o predict predict.c
+
 clean:
 	rm demo demo.o
