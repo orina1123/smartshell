@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string>
 #include <readline/readline.h>
 #include <readline/history.h>
  
@@ -9,32 +10,37 @@ char * dupstr (char*);
 void *xmalloc (int);
 void history_init(char*);
  
-char* cmd [] ={ "hello", "world", "hell" ,"word", "quit", " " };
+const char* cmd [] ={ "hello", "world", "hell" ,"word", "quit", " " };
 char* his [12];
 
-char* buffer;
-
+//char* buffer;
+std::string candidate_list;
  
 int main(int argc, char* argv[])
 {
     int ret;
     char *buf;
-    buffer = (char *) malloc(sizeof(char)*200);
+    //buffer = (char *) malloc(sizeof(char)*200);
     rl_attempted_completion_function = my_completion;
 
     history_init(argv[1]);
  
-    while((buf = readline("\n== SmartShell ==>"))!=NULL) {
+    while((buf = readline("\n== SmartShell ==> "))!=NULL) { //TODO working directory
         //enable auto-complete
         rl_bind_key('\t',rl_complete);
+        //rl_bind_key('\t',rl_menu_complete);
         printf("cmd [%s]\n",buf);
+		
+		//execute the entered command
+		system(buf);
+
         if (strcmp(buf,"quit")==0)
             break;
         if (buf[0]!=0)
             add_history(buf);
     }
  
-    free(buf);
+    //free(buf);
  
     return 0;
 }
@@ -44,11 +50,12 @@ static char** my_completion( const char * text , int start,  int end)
     int ret;
     char str[5]="test"; 
     matches = (char **)NULL;
- 
-    if (start == 0)
-        matches = rl_completion_matches ((char*)text, &my_generator);
-    else
-        rl_bind_key('\t',rl_abort);
+ 	//printf("[[%s]] %d,%d\n", text, start, end);  //text contains only ONE argument (seperated by blanks)
+    //if (start == 0)
+        //matches = rl_completion_matches ((char*)text, &my_generator);//TODO implement our func. to generate matches (replace rl_completion_matches())
+        matches = rl_completion_matches ((char*)rl_line_buffer, &my_generator);
+    //else //** file completion part
+    //    rl_bind_key('\t',rl_abort);
     if (matches != NULL){
         char *string;
         string = matches[0];
@@ -57,10 +64,26 @@ static char** my_completion( const char * text , int start,  int end)
     }
 //    printf("rl_line_buffer: %s\n", rl_line_buffer);
 //    ret = printf("rl_point: %s\n", rl_point);
-    printf("%s\n", buffer);
-    rl_on_new_line();
 
+	/*printf("%s\n", buffer);
+	buffer[0] = "\0"; //empty the buffer*/
+	printf("%s\n", candidate_list.c_str());
+	candidate_list.clear();
+    
+	//new prompt
+	//rl_delete_text(0, end);
+	rl_on_new_line();
+	rl_bind_key('\t',rl_complete);
  
+	//process matches, remove the part before start
+	int i=0;	
+	while(matches[i] != NULL)
+	{
+		//printf("^^%s\n", matches[i]);
+		strcpy(matches[i], std::string(matches[i]).substr(start).c_str()); //FIXME (in our own completion_matches func.)
+		++i;
+	}
+	
     return (matches);
  
 }
@@ -81,13 +104,19 @@ char* my_generator(const char* text, int state)
         list_index++;
         //printf("name: %s\n", name); 
         if (strncmp (name, text, len) == 0){
+			/*
             r = (char*) xmalloc ((strlen (name) + 5));
             strcpy(r, name);
-            strncat(r, prob, 4);
+            //strncat(r, prob, 4);
+            strcat(r, prob);
             //printf("\n%s", r);
+            strcat(buffer, "\n");
             strcat(buffer, r);
             free(r);
+			*/
+			candidate_list += "\n" + std::string(name) + " 15%";
             return (dupstr(name));
+
         }
     }
  
