@@ -31,13 +31,15 @@ int main(int argc, char* argv[])
         //rl_bind_key('\t',rl_menu_complete);
         printf("cmd [%s]\n",buf);
 		
-		//execute the entered command
-		system(buf);
-
-        if (strcmp(buf,"quit")==0)
+		if (strcmp(buf,"quit")==0)
             break;
         if (buf[0]!=0)
             add_history(buf);
+		
+		//execute the entered command
+		system(buf);
+
+
     }
  
     //free(buf);
