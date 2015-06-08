@@ -1,0 +1,100 @@
+grep -rl rl_message bash
+vim bash/lib/readline/examples/rl
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+man rl_insert_text
+grep -rl rl_insert_text .
+grep -rl rl_insert_text bash
+grep -rl rl_insert_text bash | grep *.c
+grep -rl rl_insert_text bash | grep .c
+grep -rl rl_insert_text bash | grep c$
+vim bash/lib/readline/complete.c 
+vim test2.c 
+grep -rl rl_completion_display_matches_hook bash
+vim bash/lib/readline/complete.c
+aptitude search libreadline | less
+cd bash
+ls
+cd ..
+ls
+vim test2.c 
+gcc -lreadline test2.c 
+vim test2.c 
+gcc -lreadline test2.c 
+vim test2.c 
+gcc -lreadline test2.c 
+vim test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c .
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+gcc -lreadline test2.c 
+vim test.c 
+vim test2.c 
+man readline
+man bash
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test.c 
+rm test.c 
+vim test2.c 
+ls
+cp test2.c smartshell/src/
+cd smartshell/src/
+git add test2.c
+cd ..
+git commit
+git push
+git pull
+git merge
+git status 
+git push
+cd 
+ls
+vim test2.c 
+gcc -lreadline test2.c 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+cp test2.c smartshell/src/test2.c 
+cd smartshell/src/
+git add test2.c 
+cd ..
+git pull
+git commit
+git push
+exit
