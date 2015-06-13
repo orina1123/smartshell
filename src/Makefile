@@ -1,14 +1,17 @@
-CXX=g++
+CXX = g++
+CPPFLAGS = -std=gnu++11 -lreadline
+PROG = $$ predict
+OBJ = \
 
-all: demo
 
-demo: demo.o
-	${CXX} demo.o -o demo -lreadline
-demo.o: demo.cpp
-	${CXX} demo.cpp -c
+all: $(PROG)
 
-predict:
-	gcc -o predict predict.c
+$(PROG): %: %.o
+	${CXX} $< -o $@ $(CPPFLAGS)
+
+$(OBJ): %.o: %.cpp
+	${CXX} $< -c
 
 clean:
-	rm demo demo.o
+	rm -rf $(PROG) $(OBJ:=.o)
+
