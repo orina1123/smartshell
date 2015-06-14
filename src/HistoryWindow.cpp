@@ -11,7 +11,7 @@
 
 using namespace std;
 
-HistoryWindow::HistoryWindow(std::string hist_file, int win_size, int back_size) //constructor
+HistoryWindow::HistoryWindow(string hist_file, int win_size, int back_size) //constructor
 {
 	//settings
 	this->win_size = win_size;
@@ -26,25 +26,24 @@ HistoryWindow::HistoryWindow(std::string hist_file, int win_size, int back_size)
 	//read history entries
 	HIST_ENTRY **hist_list = history_list();
 	int i = 0;
+	vector<string> tmp;
     while(hist_list[i] != NULL)
 	{
 		string full_line = string(hist_list[i]->line);
 
-		this->win_with_args.push_back(full_line);
-		
-		string cmd = this->get_cmd_part(full_line);
-		this->win_cmd_only.push_back(cmd);
+		tmp.push_back(full_line);
 
 		++i;
     }
 
-	//shrink to window size
-	while(this->win_with_args.size() > this->win_size)
+	//push into window
+	i = 0;
+	for(vector<string>::reverse_iterator rit = tmp.rbegin(); rit != tmp.rend() && i < this->win_size; ++rit)
 	{
-		this->win_with_args.pop_front();
-		this->win_cmd_only.pop_front();
+		//cout << *rit << endl;
+		this->add_entry(*rit);
+		++i;
 	}
-
 }
 
 void HistoryWindow::show_window(void)
@@ -61,41 +60,95 @@ void HistoryWindow::add_entry(string full_line)
 	//GNU History Library storage
 	add_history(full_line.c_str());
 
-	this->add_cnt(full_line); //FIXME
+	this->add_cnt(full_line);
 	this->win_with_args.push_back(full_line);
 	this->win_cmd_only.push_back(this->get_cmd_part(full_line));
 
-	string last_line = this->win_with_args.front();
-	this->win_with_args.pop_front();
-	this->win_cmd_only.pop_front();
-	this->del_cnt(last_line);
+	if(this->win_with_args.size() > this->win_size)
+	{
+		string last_line = this->win_with_args.front();
+		this->win_with_args.pop_front();
+		this->win_cmd_only.pop_front();
+		this->del_cnt(last_line);
+	}
 }
 
-void HistoryWindow::add_cnt(string add_line)
+void HistoryWindow::add_cnt(string add_line) //call BEFORE push
 {
 	string cmd = this->get_cmd_part(add_line);
-	deque<string>::size_type q_size = this->win_with_args.size();
+	int q_size = this->win_with_args.size();
 	for(int i=1; i<=this->back_size; ++i)
 	{
 		if(q_size-i < 0)
 			break;
 
 		//cmd + arg 
+		//cout << q_size-i << endl;
 		string pre_c_a = this->win_with_args[q_size-i];
 		this->c_a_cnt[i][pre_c_a][add_line] += 1;
 
 		//cmd only
 		string pre_cmd = this->get_cmd_part(pre_c_a);
+		//cout << "#" << pre_cmd << "#" << endl;
 		this->cmd_cnt[i][pre_cmd][cmd] += 1;
 	}
 
-//	if(this->cmd_2_cnt.find)
-//	TODO
+	if(q_size-1 > 0)
+	{
+		string pre2_c_a = this->win_with_args[q_size-2];
+		string pre1_c_a = this->win_with_args[q_size-1];
+		//cout << pre2_c_a << " // " << pre1_c_a << endl;
+		this->c_a_2_cnt[make_pair(pre2_c_a, pre1_c_a)][add_line] += 1;	
+		
+		string pre2_cmd = this->win_cmd_only[q_size-2];
+		string pre1_cmd = this->win_cmd_only[q_size-1];
+		this->cmd_2_cnt[make_pair(pre2_cmd, pre1_cmd)][this->get_cmd_part(add_line)] += 1;
+	}
 }
 
-void HistoryWindow::del_cnt(string del_line)
+void HistoryWindow::del_cnt(string del_line) //call AFTER pop
 {
-	//TODO
+	string del_cmd = this->get_cmd_part(del_line);
+	int q_size = this->win_with_args.size();
+	for(int i=1; i<=this->back_size; ++i)
+	{
+		string c_a = this->win_with_args[i-1];
+		//cout << del_line << " // " << c_a << endl;
+		//cout << c_a_cnt[i][del_line][c_a] << endl;
+		this->c_a_cnt[i][del_line][c_a] -= 1;
+		//cout << c_a_cnt[i][del_line][c_a] << endl;
+		
+		string cmd = this->get_cmd_part(c_a);
+		this->cmd_cnt[i][del_cmd][cmd] -= 1;
+	}
+	
+	string next1_c_a = this->win_with_args[0];
+	string next2_c_a = this->win_with_args[1];
+	this->c_a_2_cnt[make_pair(del_line, next1_c_a)][next2_c_a] -= 1;
+
+	string next1_cmd = this->win_cmd_only[0];
+	string next2_cmd = this->win_cmd_only[1];
+	this->cmd_2_cnt[make_pair(del_cmd, next1_cmd)][next2_cmd] -= 1;
+}
+
+int HistoryWindow::get_cmd_cnt(int i, string pre_cmd, string cmd)
+{
+	return this->cmd_cnt[i][pre_cmd][cmd];
+}
+
+int HistoryWindow::get_c_a_cnt(int i, string pre_c_a, string c_a)
+{
+	return this->c_a_cnt[i][pre_c_a][c_a];
+}
+
+int HistoryWindow::get_cmd_2_cnt(string pre2_cmd, string pre1_cmd, string cmd)
+{
+	return this->cmd_2_cnt[make_pair(pre2_cmd, pre1_cmd)][cmd];
+}
+
+int HistoryWindow::get_c_a_2_cnt(string pre2_c_a, string pre1_c_a, string c_a)
+{
+	return this->c_a_2_cnt[make_pair(pre2_c_a, pre1_c_a)][c_a];
 }
 
 string HistoryWindow::get_cmd_part(string full_line)
@@ -103,7 +156,7 @@ string HistoryWindow::get_cmd_part(string full_line)
 	size_t blank_pos = full_line.find(" ");
 	string cmd;
 	if(blank_pos != string::npos)
-		cmd = full_line.substr(blank_pos+1);
+		cmd = full_line.substr(0, blank_pos);
 	else
 		cmd = full_line;
 	

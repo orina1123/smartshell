@@ -12,8 +12,11 @@ class HistoryWindow
 		HistoryWindow(string, int, int);
 		void show_window(void);
 		void add_entry(string);
-		void add_cnt(string);
-		void del_cnt(string);
+		int get_cmd_cnt(int, string, string);
+		int get_c_a_cnt(int, string, string);	
+		int get_cmd_2_cnt(string, string, string);
+		int get_c_a_2_cnt(string, string, string);
+
 
 	private:
 		int win_size;
@@ -28,4 +31,6 @@ class HistoryWindow
 		map< pair<string, string>, map<string, int> > c_a_2_cnt;
 
 		string get_cmd_part(string);
+		void add_cnt(string);
+		void del_cnt(string);
 };
