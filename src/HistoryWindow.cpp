@@ -182,7 +182,10 @@ vector< pair<string, float> > HistoryWindow::get_cmd_match_list(string input)
 		  }
 	}
 
-	std::sort(candidates.begin(), candidates.end(), cmp);
+	std::sort(candidates.begin(), candidates.end(), [](const std::pair<string, int> &a, const std::pair<string, int> &b)
+			{
+				return a.second<b.second;
+			});
 	//std::sort(candidates.begin(), candidates.end());
 	for(vector< pair<string, int> >::iterator it = candidates.begin(); it != candidates.end(); ++it)
 	{

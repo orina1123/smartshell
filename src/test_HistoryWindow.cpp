@@ -5,9 +5,9 @@
 #define N 80
 #define BACKSIZE 2
 
-int main()
+int main(int argc, char* argv[])
 {
-	HistoryWindow h_win("test_history", N, BACKSIZE);
+	HistoryWindow h_win(argv[1], N, BACKSIZE);
 
 	h_win.show_window();
 

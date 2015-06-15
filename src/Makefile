@@ -1,16 +1,16 @@
 CXX = g++
 CPPFLAGS = -std=gnu++11 -lreadline
-PROG = $$ predict
+PROG = $$ predict test_HistoryWindow
 OBJ = \
-
+	  HistoryWindow \
 
 all: $(PROG)
 
-$(PROG): %: %.o
-	${CXX} $< -o $@ $(CPPFLAGS)
+$(PROG): %: %.o $(OBJ:=.o)
+	${CXX} $< $(OBJ:=.o) -o $@ $(CPPFLAGS)
 
-$(OBJ): %.o: %.cpp
-	${CXX} $< -c
+$(OBJ:=.o): %.o: %.cpp
+	${CXX} $< -c $(CPPFLAGS)
 
 clean:
 	rm -rf $(PROG) $(OBJ:=.o)
