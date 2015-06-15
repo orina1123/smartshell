@@ -6,6 +6,7 @@
 #include <vector>
 #include <deque>
 #include <map>
+#include <algorithm>
 #include "HistoryWindow.h"
 #include <readline/history.h>
 
@@ -57,12 +58,17 @@ void HistoryWindow::show_window(void)
 
 void HistoryWindow::add_entry(string full_line)
 {
+	string cmd = this->get_cmd_part(full_line);
+	
 	//GNU History Library storage
 	add_history(full_line.c_str());
 
+	this->all_c_a.insert(full_line);
+	this->all_cmd.insert(cmd);
+
 	this->add_cnt(full_line);
 	this->win_with_args.push_back(full_line);
-	this->win_cmd_only.push_back(this->get_cmd_part(full_line));
+	this->win_cmd_only.push_back(cmd);
 
 	if(this->win_with_args.size() > this->win_size)
 	{
@@ -150,6 +156,86 @@ int HistoryWindow::get_c_a_2_cnt(string pre2_c_a, string pre1_c_a, string c_a)
 {
 	return this->c_a_2_cnt[make_pair(pre2_c_a, pre1_c_a)][c_a];
 }
+
+bool cmp(const std::pair<string,int> &left, const std::pair<string,int> &right) 
+{
+	return (right.second < left.second); 
+}
+vector< pair<string, float> > HistoryWindow::get_cmd_match_list(string input)
+{
+	vector< pair<string, float> > ret_list;
+
+	vector< pair<string, int> > candidates;
+	string pre_cmd = this->win_cmd_only.back();
+	//cout << "##" << pre_cmd << endl;
+	int sum_cnt = 0;
+	for(set<string>::iterator it = this->all_cmd.begin(); it != this->all_cmd.end(); ++it)//get candidate from all appeared command
+	{
+		  string cmd = *it;
+		  //cout << "**" << cmd << endl;
+		  int cnt = this->get_cmd_cnt(1, pre_cmd, cmd);
+		  if(input.compare( cmd.substr(0, input.length()) ) == 0)
+		  {
+			  //cout << "**" << cmd << endl;
+			  candidates.push_back(make_pair(cmd, cnt));
+			  sum_cnt += cnt;
+		  }
+	}
+
+	std::sort(candidates.begin(), candidates.end(), cmp);
+	//std::sort(candidates.begin(), candidates.end());
+	for(vector< pair<string, int> >::iterator it = candidates.begin(); it != candidates.end(); ++it)
+	{
+		string cmd = (*it).first;
+		int cnt = (*it).second;
+		//cout << (*it).first << " " << (*it).second << endl;
+		float prob;
+		if(sum_cnt > 0)
+			prob = (float)cnt / sum_cnt;
+		else
+			prob = 0.0;
+
+		ret_list.push_back(make_pair(cmd, prob));
+		//cout << cnt << " / " << sum_cnt << endl;
+	}
+
+	return ret_list;
+}
+vector< pair<string, float> > HistoryWindow::get_c_a_match_list(string input)
+{
+	vector< pair<string, float> > ret_list;
+
+	vector< pair<string, int> > candidates;
+	string pre_c_a = this->win_with_args.back();
+	int sum_cnt = 0;
+	for(set<string>::iterator it = this->all_c_a.begin(); it != this->all_c_a.end(); ++it)//get candidate from all appeared command
+	{
+		  string c_a = *it;
+		  int cnt = this->get_c_a_cnt(1, pre_c_a, c_a);
+		  if(input.compare( c_a.substr(0, input.length()) ) == 0)
+		  {
+			  candidates.push_back(make_pair(c_a, cnt));
+			  sum_cnt += cnt;
+		  }
+	}
+
+	std::sort(candidates.begin(), candidates.end(), cmp);
+	for(vector< pair<string, int> >::iterator it = candidates.begin(); it != candidates.end(); ++it)
+	{
+		string c_a = (*it).first;
+		int cnt = (*it).second;
+		float prob;
+		if(sum_cnt > 0)
+			prob = (float)cnt / sum_cnt;
+		else
+			prob = 0.0;
+		ret_list.push_back(make_pair(c_a, prob)); //TODO implement different count combination method
+	//	cout << cnt << " / " << sum_cnt << endl;
+	}
+
+	return ret_list;
+}
+
 
 string HistoryWindow::get_cmd_part(string full_line)
 {

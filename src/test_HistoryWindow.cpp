@@ -2,7 +2,7 @@
 #include <iostream>
 #include "HistoryWindow.h"
 
-#define N 10
+#define N 80
 #define BACKSIZE 2
 
 int main()
@@ -18,7 +18,26 @@ int main()
 	cout << "n(\"git push\", \"git commit\", \"git pull\") " << h_win.get_c_a_2_cnt("git push", "git commit", "git pull") << endl;
 	cout << "n(\"git ...\", \"cd ...\", \"cp ...\") " << h_win.get_cmd_2_cnt("git", "cd", "cp") << endl;
 	cout << "n(\"exit ...\", \"git ...\", \"git ...\") " << h_win.get_cmd_2_cnt("exit", "git", "git") << endl;
-	printf("==after add==\n");
+	
+	cout << "try match: g" << endl;
+	cout << "(cmd_only)" << endl;
+	vector< pair<string, float> > list = h_win.get_cmd_match_list("g");
+	cout.precision(4);
+	for(vector< pair<string, float> >::iterator it = list.begin(); it != list.end(); ++it)
+	{
+		cout << "\t" << (*it).first << " " << fixed << (*it).second << endl;
+
+	}	
+	cout << "(with_args)" << endl;
+	list = h_win.get_c_a_match_list("g");
+	cout.precision(4);
+	for(vector< pair<string, float> >::iterator it = list.begin(); it != list.end(); ++it)
+	{
+		cout << "\t" << (*it).first << " " << fixed << (*it).second << endl;
+
+	}
+	
+	printf("\n\n==after add==\n");
 	h_win.add_entry("test a1 a2");
 
 	h_win.show_window();
