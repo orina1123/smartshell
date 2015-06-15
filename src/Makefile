@@ -13,5 +13,5 @@ $(OBJ:=.o): %.o: %.cpp
 	${CXX} $< -c $(CPPFLAGS)
 
 clean:
-	rm -rf $(PROG) $(OBJ:=.o)
+	rm -rf $(PROG) $(PROG:=.o) $(OBJ:=.o)
 
