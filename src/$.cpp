@@ -1,9 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
+#include <sstream>
 #include <string>
 #include <readline/readline.h>
 #include <readline/history.h>
- 
+#include "HistoryWindow.h"
+
+#define N 80
+#define BACKSIZE 2
+
+
+using namespace std;
+
 static char** my_completion(const char*, int ,int);
 char* my_generator(const char*,int);
 char * dupstr (char*);
@@ -11,10 +20,12 @@ void *xmalloc (int);
 void history_init(char*);
  
 const char* cmd [] ={ "hello", "world", "hell" ,"word", "quit", " " };
-char* his [12];
+char* his [N];
 
 //char* buffer;
-std::string candidate_list;
+HistoryWindow* h_win;
+stringstream candidate_list;
+string pre_line;
  
 int main(int argc, char* argv[])
 {
@@ -23,8 +34,11 @@ int main(int argc, char* argv[])
     //buffer = (char *) malloc(sizeof(char)*200);
     rl_attempted_completion_function = my_completion;
 
-    history_init(argv[1]);
+    history_init(argv[1]); //FIXME merge into HistoryWindow
  
+	h_win = new HistoryWindow(argv[1], N, BACKSIZE);
+	//h_win->show_window();
+
     while((buf = readline("\n== SmartShell ==> "))!=NULL) { //TODO working directory
         //enable auto-complete
         rl_bind_key('\t',rl_complete);
@@ -34,12 +48,14 @@ int main(int argc, char* argv[])
 		if (strcmp(buf,"quit")==0)
             break;
         if (buf[0]!=0)
-            add_history(buf);
+		{
+            //add_history(buf);
+			h_win->add_entry(string(buf));
+			pre_line = string(buf);
+		}
 		
 		//execute the entered command
 		system(buf);
-
-
     }
  
     //free(buf);
@@ -69,8 +85,10 @@ static char** my_completion( const char * text , int start,  int end)
 
 	/*printf("%s\n", buffer);
 	buffer[0] = "\0"; //empty the buffer*/
-	printf("%s\n", candidate_list.c_str());
+	//printf("%s\n", candidate_list.c_str());
+	cout << candidate_list.str() << endl;
 	candidate_list.clear();
+	candidate_list.str(string());
     
 	//new prompt
 	//rl_delete_text(0, end);
@@ -82,7 +100,7 @@ static char** my_completion( const char * text , int start,  int end)
 	while(matches != NULL && matches[i] != NULL)
 	{
 		//printf("^^%s\n", matches[i]);
-		strcpy(matches[i], std::string(matches[i]).substr(start).c_str()); //FIXME (in our own completion_matches func.)
+		strcpy(matches[i], string(matches[i]).substr(start).c_str()); //FIXME (in our own completion_matches func.)
 		++i;
 	}
 	
@@ -95,7 +113,7 @@ char* my_generator(const char* text, int state)
     static int list_index, len;
     char *name;
     char *r;
-    char prob[5]="15%\n";
+    //char prob[5]="15%\n";
     
     if (!state) {
         list_index = 0;
@@ -116,9 +134,10 @@ char* my_generator(const char* text, int state)
             strcat(buffer, r);
             free(r);
 			*/
-			candidate_list += "\n" + std::string(name) + " 15%";
+			//candidate_list += "\n" + std::string(name) + " 15%";
+			string next_line = string(name);
+			candidate_list << "\n" << next_line << " " << h_win->get_c_a_cnt(1, pre_line, next_line)*100 << "%";
             return (dupstr(name));
-
         }
     }
  
@@ -134,7 +153,7 @@ void history_init(char* hist_file){
     //read_history_range ("/home/lilian/.bash_history", 490, 500);
     read_history(hist_file);
     the_list = history_list ();
-    for(i=0; i<10; i++){
+    for(i=0; i<N; i++){
        his[i] = (char*) xmalloc(strlen(the_list[i]->line) + 1);
        strcpy(his[i], the_list[i]->line);
        printf("%s\n", his[i]);
