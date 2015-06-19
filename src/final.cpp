@@ -20,11 +20,48 @@
 using namespace std;
 
 //static char** my_completion(const char*, int ,int);
-static int esc_function(int, int);
 static int backward_kill_word_to_cmd (int, int);
+static int def_complete (int, int);
 
 // HistoryWindow
 HistoryWindow* h_win;
+
+// for testing
+string data1 = string("CMD_A arg1 arg2 arg3 | CMD2 arg1 arg2");
+string data2 = string("CMD_A arg1 arg2 arg3 | CMD2 arg1 arg2");
+string data3 = string("CMD_A arg1 arg2 arg3 | CMD2 arg1 arg2");
+string data4 = string("CMD_A arg1 arg2 arg3 | CMD2 arg1 arg2");
+// total 100
+int prob[5] = {0, 40, 30, 20, 10};
+
+
+
+
+
+/* Variables known only to the readline library. */
+
+/* If non-zero, non-unique completions always show the list of matches. */
+int _rl_complete_show_all = 0;
+
+/* If non-zero, non-unique completions show the list of matches, unless it
+   is not possible to do partial completion and modify the line. */
+int _rl_complete_show_unmodified = 0;
+
+/* If non-zero, completed directory names have a slash appended. */
+int _rl_complete_mark_directories = 1;
+
+/* If non-zero, the symlinked directory completion behavior introduced in
+   readline-4.2a is disabled, and symlinks that point to directories have
+   a slash appended (subject to the value of _rl_complete_mark_directories).
+   This is user-settable via the mark-symlinked-directories variable. */
+int _rl_complete_mark_symlink_dirs = 0;
+
+/* If non-zero, completions are printed horizontally in alphabetical order,
+   like `ls -x'. */
+int _rl_print_completions_horizontally;
+
+static int completion_changed_buffer;
+
 
 int main(int argc, char *argv[])
 {
@@ -34,16 +71,12 @@ int main(int argc, char *argv[])
 	h_win = new HistoryWindow("../data/history_lilian_desktop", N, BACKSIZE);
 	//rl_attempted_completion_function = my_completion;
 
-
 	// in first_line to 
 	rl_bind_key('\t', rl_complete);
 	rl_bind_keyseq("\\C-k", backward_kill_word_to_cmd);
 
 	while((buffer = readline("\n== SmartShell ==> ")) != NULL){
-		//enable auto-complete
 		rl_bind_key('\t', rl_complete);
-		//enable ESC functionality, esc in ascii == 27
-		//rl_bind_key(ESC, esc_function);
 		rl_bind_keyseq ("\\C-k", backward_kill_word_to_cmd);
 		//rl_bind_keyseq ("\\C-n", rl_backward_kill_word);
 		//rl_bind_keyseq("\\C-t", rl_kill_word);
@@ -58,6 +91,49 @@ int main(int argc, char *argv[])
 
 	}
 	return 0;
+}
+
+static int def_complete(int ignore, int invoking_key){
+
+
+/*
+int
+rl_complete (ignore, invoking_key)
+     int ignore, invoking_key;
+{
+*/
+  rl_completion_invoking_key = invoking_key;
+//  cout << endl << "invoking_key: " << invoking_key << endl;
+
+//  if (rl_inhibit_completion)
+//    return (_rl_insert_char (ignore, invoking_key));
+//   if (rl_last_func == rl_complete && !completion_changed_buffer)
+//    return (rl_complete_internal ('?'));
+//  else if (_rl_complete_show_all)
+//    return (rl_complete_internal ('!'));
+//  else if (_rl_complete_show_unmodified)
+//    return (rl_complete_internal ('@'));
+//  else 
+    return (rl_complete_internal (TAB));
+
+//}
+
+
+
+
+//	rl_complete_internal(TAB);
+}
+
+/*****
+text, start, end
+
+matches: array of string(char*)
+*****/
+
+static char** my_completion (const char * text, int start, int end)
+{
+	
+
 }
 
 /*
