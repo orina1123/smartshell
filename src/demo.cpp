@@ -77,8 +77,8 @@ static char** my_completion( const char * text , int start,  int end)
 	if (matches != NULL){
 		char *string;
 		string = matches[0];
-		//        printf("\n\n==%s\n", string);
-		//        printf("\n");
+		printf("\n\n==%s\n", string);
+		printf("\n");
 	}
 	//    printf("rl_line_buffer: %s\n", rl_line_buffer);
 	//    ret = printf("rl_point: %s\n", rl_point);

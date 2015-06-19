@@ -19,9 +19,9 @@
 
 using namespace std;
 
-//static char** my_completion(const char*, int ,int);
+static char** my_completion(const char*, int ,int);
 static int backward_kill_word_to_cmd (int, int);
-static int def_complete (int, int);
+//static int def_complete (int, int);
 
 // HistoryWindow
 HistoryWindow* h_win;
@@ -96,100 +96,99 @@ int main(int argc, char *argv[])
 static int def_complete(int ignore, int invoking_key){
 
 
-/*
-int
-rl_complete (ignore, invoking_key)
-     int ignore, invoking_key;
-{
-*/
-  rl_completion_invoking_key = invoking_key;
-//  cout << endl << "invoking_key: " << invoking_key << endl;
+	/*
+	   int
+	   rl_complete (ignore, invoking_key)
+	   int ignore, invoking_key;
+	   {
+	 */
+	//  rl_completion_invoking_key = invoking_key;
+	//  cout << endl << "invoking_key: " << invoking_key << endl;
 
-//  if (rl_inhibit_completion)
-//    return (_rl_insert_char (ignore, invoking_key));
-//   if (rl_last_func == rl_complete && !completion_changed_buffer)
-//    return (rl_complete_internal ('?'));
-//  else if (_rl_complete_show_all)
-//    return (rl_complete_internal ('!'));
-//  else if (_rl_complete_show_unmodified)
-    return (rl_complete_internal ('@'));
-//  else 
-//    return (rl_complete_internal (TAB));
+	//  if (rl_inhibit_completion)
+	//    return (_rl_insert_char (ignore, invoking_key));
+	//   if (rl_last_func == rl_complete && !completion_changed_buffer)
+	//    return (rl_complete_internal ('?'));
+	//  else if (_rl_complete_show_all)
+	//    return (rl_complete_internal ('!'));
+	//  else if (_rl_complete_show_unmodified)
+	//    return (rl_complete_internal ('@'));
+	//  else 
+	//    return (rl_complete_internal (TAB));
 
-//}
-
-
+	//}
 
 
-//	rl_complete_internal(TAB);
+
+
+	//	rl_complete_internal(TAB);
 }
 
 /*****
-text, start, end
+  text, start, end
 
 matches: array of string(char*)
-*****/
+ *****/
 
 static char** my_completion (const char * text, int start, int end)
 {
+	char **matches;
 	
 
 }
 
-/*
-   static char** my_completion( const char * text , int start,  int end)
-   {
-   char **matches;
-   int ret;
-   char str[5]="test"; 
-   matches = (char **)NULL;
-//printf("[[%s]] %d,%d\n", text, start, end);  //text contains only ONE argument (seperated by blanks)
-//if (start == 0)
-//matches = rl_completion_matches ((char*)text, &my_generator);//TODO implement our func. to generate matches (replace rl_completion_matches())
-//matches = rl_completion_matches ((char*)rl_line_buffer, &my_generator);
-//else //** file completion part
-//    rl_bind_key('\t',rl_abort);
-if (matches != NULL){
-char *string;
-string = matches[0];
-//        printf("\n\n==%s\n", string);
-//        printf("\n");
-}
-//    printf("rl_line_buffer: %s\n", rl_line_buffer);
-//    ret = printf("rl_point: %s\n", rl_point);
-
-printf("%s\n", buffer);
-buffer[0] = "\0"; //empty the buffer
-//printf("%s\n", candidate_list.c_str());
-cout << candidate_list.str() << endl;
-candidate_list.clear();
-candidate_list.str(string());
-
-//new prompt
-//rl_delete_text(0, end);
-rl_on_new_line();
-rl_bind_key('\t',rl_complete);
-
-//process matches, remove the part before start
-int i=0;	
-while(matches != NULL && matches[i] != NULL)
+static char** my_completion( const char * text , int start,  int end)
 {
-//printf("^^%s\n", matches[i]);
-strcpy(matches[i], string(matches[i]).substr(start).c_str()); //FIXME (in our own completion_matches func.)
-++i;
-}
+	char **matches;
+	int ret;
+	char str[5]="test"; 
+	matches = (char **)NULL;
+	//printf("[[%s]] %d,%d\n", text, start, end);  //text contains only ONE argument (seperated by blanks)
+	//if (start == 0)
+	//matches = rl_completion_matches ((char*)text, &my_generator);//TODO implement our func. to generate matches (replace rl_completion_matches())
+	matches = rl_completion_matches ((char*)rl_line_buffer, &my_generator);
+	//else //** file completion part
+	//    rl_bind_key('\t',rl_abort);
+	if (matches != NULL){
+		char *string;
+		string = matches[0];
+		//        printf("\n\n==%s\n", string);
+		//        printf("\n");
+	}
+	//    printf("rl_line_buffer: %s\n", rl_line_buffer);
+	//    ret = printf("rl_point: %s\n", rl_point);
 
-return (matches);
+	printf("%s\n", buffer);
+	buffer[0] = "\0"; //empty the buffer
+	//printf("%s\n", candidate_list.c_str());
+	cout << candidate_list.str() << endl;
+	candidate_list.clear();
+	candidate_list.str(string());
+
+	//new prompt
+	//rl_delete_text(0, end);
+	rl_on_new_line();
+	rl_bind_key('\t',rl_complete);
+
+	//process matches, remove the part before start
+	int i=0;	
+	while(matches != NULL && matches[i] != NULL)
+	{
+		//printf("^^%s\n", matches[i]);
+		strcpy(matches[i], string(matches[i]).substr(start).c_str()); //FIXME (in our own completion_matches func.)
+		++i;
+	}
+
+	return (matches);
 
 }
- */
 
 
 
 /*****
-reference to lib readline source code kill.c (function rl_backward_kill_word) and text.c
-kill all words except command (the 1st word)
-******/
+  reference to lib readline source code kill.c (function rl_backward_kill_word) and text.c
+  kill all words except command (the 1st word)
+ ******/
 
 static int backward_kill_word_to_cmd (int count, int ignore)
 {
