@@ -52,12 +52,14 @@ static char** my_completion( const char * text , int start,  int end)
     if (matches != NULL){
         char *string;
         string = matches[0];
-//        printf("\n\n==%s\n", string);
-//        printf("\n");
+        printf("\n");
+	printf("0: %s\n", matches[0]);
+	printf("1: %s\n", matches[1]);
+	printf("2: %s\n", matches[2]);
     }
-    printf("rl_line_buffer: %s\n", rl_line_buffer);
+    //printf("rl_line_buffer: %s\n", rl_line_buffer);
 //    ret = printf("rl_point: %s\n", rl_point);
-    printf("%s\n", buffer);
+    //printf("%s\n", buffer);
     rl_on_new_line();
 
  
@@ -81,13 +83,13 @@ char* my_generator(const char* text, int state)
         list_index++;
         //printf("name: %s\n", name); 
         if (strncmp (name, text, len) == 0){
-            r = (char*) xmalloc ((strlen (name) + 5));
+            r = (char*) xmalloc ((strlen (name) + 10));
             strcpy(r, name);
             strncat(r, prob, 4);
-            //printf("\n%s", r);
+//            printf("\nr:%s", r);
             strcat(buffer, r);
-            free(r);
-            return (dupstr(name));
+            //free(r);
+            return (dupstr(r));
         }
     }
  
