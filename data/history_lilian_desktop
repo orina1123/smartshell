@@ -1,0 +1,1533 @@
+exit
+cd ../../mirage-www/
+ls
+cd src
+ls
+vim main.ml 
+cd
+rm -rf mirage-skeleton/
+
+git clone git://github.com/mirage/mirage-skeleton.git
+ls
+cd mirage-skeleton/
+ls
+cd console/
+ls
+vim unikernel.ml 
+vim config.ml 
+ls
+vim unikernel.ml 
+cd ../..
+ls
+git clone git://github.com/mirage/mirage-www.git
+ls
+cd mirage-www/
+ls
+cd src/
+ls
+vim local_uri.ml 
+vim pages.ml 
+ls | xargs cat
+ls | xargs cat | less
+ls | xargs cat | wc -l
+cd ../../mirage-skeleton/con
+cd ../../mirage-skeleton/console/
+ls | xargs cat | wc -l
+sudo aptitude install xrdp
+cd
+cd mirage-skeleton/con
+cd mirage-skeleton/console/
+ls
+make clean
+ls
+make distclean
+vim Makefile 
+ls
+vim console_libvirt.xml 
+vim main.ml 
+vim unikernel.ml 
+ls
+screen
+sudo aptitude install tmux
+tmux 
+sudo -s
+su
+opam --version
+sudo
+man sudo
+ls
+opam init
+opam remote
+ocaml -version
+eval `opam config env`
+opam list
+opam install mirage
+git clone git://github.com/mirage/mirage-skeleton.git
+cd mirage-skeleton/
+cd console/
+mirage -version
+mirage --version
+mirage configure --unix
+su
+mirage configure --unix
+make depend
+make 
+./mir-console 
+egrep '(vmx|svm)' --color=always /proc/cpuinfo
+apt-get install xen-linux-system xen-tools
+sudo apt-get install xen-linux-system xen-tools
+lsb_release -a
+su
+aptitude show xen-linux
+aptitude show xen-linux-system
+aptitude show xen-linux-system-amd64
+ping 8.8.8.8
+ifdown xenbr0
+sudo ifdown xenbr0
+ping 8.8.8.8
+sudo service networking restart
+sudo service networking stop
+sudo service networking status
+sudo service networking start
+ping 8.8.8.8
+ifconfig
+sudo
+sudo -s
+mirage configure --xen
+ls
+ls -al
+./console.xe 
+make depend
+make 
+ls
+ls -al
+vim console.xl
+xl
+sudo aptitude install htop
+sudo vim /etc/apt/sources.list
+sudo -s
+cd
+git clone git://github.com/mirage/mirage-www
+cd mirage-www/
+ls
+cd src/
+env NET=socket PORT=8000 FS=crunch mirage configure --unix
+make depend
+make
+make run
+make urn
+make run
+cd ..
+ls
+cd src/
+ls
+cd _build/
+ls
+cd ..
+env | less
+history 
+env NET=socket PORT=8080 FS=crunch mirage configure --unix
+make depend
+make
+make run
+ls
+./mir-www 
+ls
+vim Makefile 
+env NET=direct mirage configure --unix
+make depend
+make
+sudo ./mir-www 
+cd ../..
+ls
+rm -rf mirage-www/
+sudo ifconfig tap0 10.0.0.1 255.255.255.0
+sudo -s
+ls
+cd mirage-www/
+ls
+cd files/
+ls
+cd ..
+ls
+cd files/
+ls
+cd html/
+ls
+cd ..
+ls
+cd scripts/
+ls
+cd ..
+ls
+cd ..
+ls
+ls -al
+vim TODO 
+vim TROVE 
+cd files/
+ls
+cd html/
+ls
+vim trace-viewer.html 
+cd ../..
+ls
+cd ..
+cd mirage-www/
+ls
+cd src/
+ls
+make 
+make depend
+make 
+sudo ifconfig
+sudo -s
+ls
+cd ..
+ls
+cd files/
+cd ..
+cd src/
+ls
+vim blog.ml 
+vim template.ml 
+cd
+sudo service apache status
+sudo service apache2 status
+git clone http://xenbits.xen.org/mini-os.git
+git://xenbits.xen.org/mini-os.git
+git git://xenbits.xen.org/mini-os.git
+git clone git://xenbits.xen.org/mini-os.git
+ls
+cd mini-os/
+ls
+cd include/
+ls
+cd ..
+grep -rl boot
+grep -rl pvboot
+grep -rl 
+grep -rl boot
+cd ..
+wget https://github.com/talex5/xen/archive/minios-v0.2.tar.gz
+ls
+tar zxvf minios-v0.2.tar.gz 
+cd xen-minios-v0.2/
+ls
+cd extras/
+ls
+cd mini-os/
+ls
+grep -rl boot
+grep -rl pvboot
+vim arch/x86/mm.c 
+grep -rl slab
+grep -rl extent
+vim mm.c 
+ls
+cd 
+ls
+cd Pictures/
+ls
+echo xfce4-session
+echo xfce4-session > ~/.xsession
+ls
+ls -al
+chmod 755 .xsession
+vim .xsession-errors 
+vim .xsession
+ls
+ls -al
+vim .xsession
+mv .xsession xession
+sudo -s
+vim .vnc/sesman_lilian_passwd 
+vim .vnc/passwd
+sudo -s
+ssh bbsu@ptt.cc
+locale -a
+sudo -s
+cd .config/ibus/
+ls
+mkdir rime
+ibus
+ibus list
+cd .config/ibus/rime/
+ls
+vim default.yaml 
+sudo -s
+ls
+cd Downloads/
+ls
+dpkg-deb help
+dpkg-deb --help
+dpkg-deb --help | less
+aptitude --help
+aptitude --help | less | grep install
+dpkg -i google-chrome-stable_current_amd64.deb 
+sudo dpkg -i google-chrome-stable_current_amd64.deb 
+aptitude search google-chrome-stable
+aptitude show google-chrome-stable
+dpkg-deb -i 
+dpkg-deb --info google-chrome-stable_current_amd64.deb 
+rm -rf google-chrome-stable_current_amd64.deb 
+sudo aptitude install google-chrome-stable
+sudo -s
+mail
+rm /home/lilian/mbox 
+ls
+cd blog/
+ls
+php artisan config:cache
+vim config/app.php 
+php artisan config:cache
+vim .env
+mysql -u lilian -p
+mysql -u lilian0111 -p
+mysql -u lilian -p
+mysql -u lilian0111 -p
+mysql -u root -p
+mysqladmin -u lilian -p
+mysqladmin -u lilian -p password
+mysql -u root -p
+rm ~/.mysql_history 
+mysql -u root -p
+php artisan make:migration create_projects_and_tasks_tables --create="projects"
+vim database/migrations/2015_06_05_034422_create_projects_and_tasks_tables.php 
+php artisan migrate
+vim config/database.php 
+sudo aptitude install php-mysql
+sudo aptitude install mysql-php
+aptitude search php | less
+aptitude install php5-mysql
+sudo aptitude install php5-mysql
+php artisan migrate
+vim .env
+mysql -u homestead -p
+php artisan migrate
+vim .env
+mysql -u homestead -p
+cd blog/
+cd database/seeds/
+ls
+vim ProjectsTableSeeder.php
+vim DatabaseSeeder.php 
+vim TasksTableSeeder.php
+composer dump-autoload
+cd ../..
+composer dump-autoload
+php artisan db:seed
+mysql -u homestead -p
+php artisan db:seed
+vim .env
+aptitude show php5-mysql
+aptitude search php | less
+vim .env
+php artisan db:seed
+mysql -u homestead -p
+php artisan migrate
+php artisan config:clear
+php artisan migrate
+vim database/migrations/2015_06_05_034422_create_projects_and_tasks_tables.php 
+php artisan migrate
+php artisan db:seed
+mysql -u homestead -p
+php artisan make:model Project
+php artisan make:model Task
+php artisan  make:controller ProjectsController
+php artisan  make:controller TasksController
+vim app/Http/routes.php 
+php artisan route:list
+vim app/Http/routes.php 
+php artisan route:list
+vim app/Http/routes.php 
+php artisan route:list
+vim app/Http/routes.php 
+php artisan route:list
+exit
+man readline
+vim test.c
+gcc test.c 
+aptitude search readline | less
+sudo aptitude install libreadline6-dev
+gcc test.c 
+vim test.c 
+sudo aptitude install libreadline-dev
+gcc test.c 
+vim test.c 
+sudo aptitude install libreadline5-dev
+aptitude search readline | less
+dpkg --get-selection
+dpkg --get-selections
+dpkg --get-selections | less
+aptitude search readline | less
+aptitude remove libreadline-de
+sudo aptitude remove libreadline-dev
+aptitude search readline | less
+gcc test.c 
+gcc test.c -lreadline
+./a.out 
+vim test.c 
+man readline
+./a.out 
+man readline
+vim test2.c
+gcc test2.c -lreadline
+./a.out 
+vim test2.c 
+./a.out 
+vim test2.c 
+gcc test2.c -lreadline
+./a.out 
+vim test2.c 
+gcc test2.c -lreadline
+./a.out 
+vim test2.c 
+gcc test2.c -lreadline
+vim test2.c 
+gcc test2.c -lreadline
+vim test2.c 
+gcc test2.c -lreadline
+./a.out 
+vim test2.c 
+./a.out 
+gcc test2.c -lreadline
+./a.out 
+ls
+./a.out 
+vim /etc/inputrc 
+vim /etc/in
+vim /etc/inputrc 
+./a.out 
+bind TAB:menu-complete
+exit
+bind '"\C-i": menu-complete'
+aptitude 
+exit
+bind '"\C-n": menu-complete'
+exit
+vim test2.c 
+gcc test2.c -lreadline
+vim test2.c 
+./a.out 
+ls
+vim test2.c 
+./a.out 
+vim test2.c 
+gcc test2.c -lreadline
+./a.out 
+vim test2.c 
+.inputrc
+vim .intputrc
+vim /etc/inputrc 
+vim test2.c 
+aptitude search course | less
+aptitude search curse | less
+cd /etc/bash_completion.d/
+l
+ls
+vim git-prompt 
+vim apache2 
+sudo -s
+bash
+vim /etc/inputrc 
+sudo vim /etc/inputrc 
+source /etc/inputrc 
+vim /etc/inputrc 
+sudo vim /etc/inputrc 
+vim test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+vim /etc/inputrc 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+'
+echo $PS3
+PS3="****"
+nano 
+nano ps3.sh
+chmod +x ps3.sh 
+./ps3.sh 
+man select
+man 7 select
+./ps3.sh 
+echo PS3
+echo $PS3
+PS3=####
+./ps3.sh 
+PS3='####'
+./ps3.sh 
+vim ps3.sh 
+./ps3.sh 
+man select
+vim test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim /etc/inputrc 
+bind -p
+bind -p | less
+man bind
+bash
+vim /etc/inputrc 
+ls
+vim test2.c 
+git config 
+git clone https://github.com/orina1123/smartshell.git
+ls
+cd smartshell/
+ls
+vim README.md 
+git add README.md 
+git commit
+git push
+cd ..
+ls
+vim test2.c 
+cp test2.c smartshell/
+ls
+cd smartshell/
+ls
+mkdir src
+mv test2.c test.c
+mv test.c src/
+git add src
+git add src/test.c 
+git commit
+git push
+git clone git://git.debian.org/git/bash-completion/bash-completion.git
+cd bash-completion/
+ls
+cd completions/
+ls
+vim gcc 
+cd ..
+git clone git://git.savannah.gnu.org/bash.git
+cd bash
+ls
+grep -rl readline.h
+aptitude grep completion .
+aptitude grep -rl completion .
+grep -rl completion
+vim lib/readline/readline.c
+vim lib/readline/complete.c 
+grep -rl history .
+grep -rl history . | less
+grep -rl history.h . | less
+vim lib/readline/examples/Inputrc 
+vim lib/readline/examples/fileman.c 
+vim lib/readline/examples/rltest.c 
+vim lib/readline/examples/histexamp.c 
+cd lib/readline/examples/
+ls
+gcc histexamp.c -lreadline
+cd ../.../..
+cd ../../..
+ls
+vim M
+vim Makefile.in 
+./configure 
+ls
+make
+ls
+cd tests/
+ls
+ls -al
+cd ..
+ls
+cd lib/readline/examples/
+ls
+./a.out 
+rm a.out 
+cd ..
+ls
+vim Makefile
+cd lib/
+ls
+cd readline/
+ls
+cd doc/
+ls
+vim Makefile 
+cd ..
+ls
+cd ..
+ls
+vim README 
+vim Makefile
+cd lib/
+ls
+cd readline/
+ls
+cd examples/
+ls
+make
+ls
+vim histexamp.c 
+vim Makefile 
+make
+make clean
+vim Makefile 
+make all
+make hisexamp
+vim Makefile 
+make
+./histexamp 
+vim histexamp.c 
+./histexamp 
+vim histexamp.c 
+ls
+vim history_file 
+rm history_file 
+vim histexamp.c 
+ls ~/.bash_history 
+vim histexamp
+vim histexamp.c 
+make
+./histexamp 
+vim histexamp.c 
+make
+./histexamp 
+ls
+vim history_file 
+vim histexamp
+vim histexamp.c 
+cd
+gcc -lreadline test2.c 
+vim test2.c 
+gcc -lreadline test2.c 
+vim test2.c 
+gcc -lreadline test2.c 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+history 
+vim test2.c 
+gcc test2.c -lreadline
+./a.out 
+vim test2.c 
+./a.out 
+gcc test2.c -lreadline
+./a.out 
+vim test2.c 
+history  | less
+vim test2.c 
+history  | less
+gcc test2.c -lreadline
+./a.out 
+vim test2.c 
+gcc test2.c -lreadline
+./a.out 
+vim test2.c 
+vim .bash_history 
+vim test2.c 
+gcc test2.c -lreadline
+./a.out 
+vim test2.c 
+gcc test2.c -lreadline
+./a.out 
+vim bash/lib/readline/examples/histexamp.c 
+ls
+gcc test2.c -lreadline
+./a.out 
+vim test2.c 
+gcc test2.c -lreadline
+./a.out 
+vim test2.c 
+gcc test2.c -lreadline
+vim test2.c 
+gcc test2.c -lreadline
+./a.out 
+vim test2.c 
+gcc test2.c -lreadline
+vim test2.c 
+gcc test2.c -lreadline
+vim test2.c 
+gcc test2.c -lreadline
+vim test2.c 
+gcc test2.c -lreadline
+./a.out 
+gcc test2.c -lreadline
+vim test2.c 
+gcc test2.c -lreadline
+./a.out 
+vim test2.c 
+./a.out 
+vim test2.c 
+./a.out 
+vim test2.c 
+./a.out 
+gcc test2.c -lreadline
+./a.out 
+vim test2.c 
+gcc test2.c -lreadline
+vim test2.c 
+gcc test2.c -lreadline
+./a.out 
+vim test2.c 
+gcc test2.c -lreadline
+./a.out 
+vim test2.c 
+history  | less
+vim .bash_history 
+ls
+cd bash
+ls
+./bashversion 
+./bashbug 
+ls
+grep -rl complet . | less
+cd examples/
+ls
+vim INDEX.txt 
+cd complete/
+ls
+vim complete-examples 
+vim bash_completion 
+cd ..
+grep -rl completion . | less
+vim lib/readline/examples/fileman.c 
+grep -rl main .
+grep -rl main . | less
+cd examples/loadables/
+ls
+vim README 
+vim mkdir.c 
+vim cat.c 
+cd ..
+ls
+vim INDEX.txt 
+vim startup-files/
+cd misc/
+ls
+cd ..
+ls
+cd ..
+grep -rl menu-complete
+grep -rl menu-complete .
+grep -rl main( . | less
+grep -rl main\( . | less
+grep -rl exe_cmd | less
+grep -rl execute_cmd | less
+vim bashline.c 
+vim execute_cmd.c 
+cd ..
+ls
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vi test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test.c 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test.c 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+gcc -lreadline test2.c 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+cd bash/lib/readline/examples/
+ls
+vim fileman.c 
+cd
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+gcc -lreadline test2.c 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+./a.out 
+vim test2.c 
+cd bash/lib/readline/
+ls
+vim complete.c 
+vim ~/test2.c 
+grep -rl rl_attempted_completion_function .
+vim complete.c 
+cd examples/
+ls
+./fileman 
+vim fileman.c 
+ls
+vim rltest.c 
+vim rlcat.c 
+vim rl.c 
+vim excallback.c 
+vim rl-callbacktest.c 
+cd
+grep -rl rl_message .
+grep -rl rl_message bash
+vim bash/lib/readline/examples/rl
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+man rl_insert_text
+grep -rl rl_insert_text .
+grep -rl rl_insert_text bash
+grep -rl rl_insert_text bash | grep *.c
+grep -rl rl_insert_text bash | grep .c
+grep -rl rl_insert_text bash | grep c$
+vim bash/lib/readline/complete.c 
+vim test2.c 
+grep -rl rl_completion_display_matches_hook bash
+vim bash/lib/readline/complete.c
+aptitude search libreadline | less
+cd bash
+ls
+cd ..
+ls
+vim test2.c 
+gcc -lreadline test2.c 
+vim test2.c 
+gcc -lreadline test2.c 
+vim test2.c 
+gcc -lreadline test2.c 
+vim test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c .
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+gcc -lreadline test2.c 
+vim test.c 
+vim test2.c 
+man readline
+man bash
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+vim test.c 
+rm test.c 
+vim test2.c 
+ls
+cp test2.c smartshell/src/
+cd smartshell/src/
+git add test2.c
+cd ..
+git commit
+git push
+git pull
+git merge
+git status 
+git push
+cd 
+ls
+vim test2.c 
+gcc -lreadline test2.c 
+vim test2.c 
+gcc -lreadline test2.c 
+./a.out 
+cp test2.c smartshell/src/test2.c 
+cd smartshell/src/
+git add test2.c 
+cd ..
+git pull
+git commit
+git push
+exit
+vim .bash_history 
+cp .bash_history smartshell/src/
+cd smartshell/
+cd src/
+ls
+ls -al
+git pull
+git add .bash_history 
+git commit
+git push
+cd ..
+cd blog/
+php artisan route:list
+cd smartshell/
+git pull
+cd src/
+vim demo.c 
+ls
+git pull
+vim demo.cpp 
+ls
+cd ..
+cd src/
+./demo 
+cd ..
+cd src/
+cd ..
+ls
+git pull
+ls -al
+vim .gitignore
+git rm --cached src/demo
+cd src
+vim Makefile
+make
+vim Makefile 
+ls
+rm demo
+make
+vim Makefile 
+make
+vim Makefile 
+make
+vim Makefile 
+make
+vim Makefile 
+make
+ls
+./demo 
+g++ demo.cpp -lpthread -o demo
+g++ demo.cpp -lreadline -o demo
+./demo 
+vim Makefile 
+make clean
+make
+ls
+cd ..
+git pull
+vim .gitignore 
+git add .
+git commit
+git push
+git pull
+git push
+cd src/
+ls
+make
+./demo 
+vim demo.cpp 
+./demo history_file 
+ls
+vim demo.cpp 
+exit
+ocaml
+htop
+mail -s "test" lilian810111@hotmail.com
+ocaml
+cd mirage-skeleton/
+cd con
+cd console/
+ls
+vim unikernel.ml 
+vim config.ml 
+ssh bbsu@ptt2.cc
+ssh bbsu@ptt.cc
+ssh bbsu@ptt2.cc
+ssh bbsu@ptt.cc
+ssh bbsu@ptt2.cc
+aptitude search libvterm | less
+aptitude search vterm | less
+complete 
+complete  | less
+man complete
+cd /etc/
+ls
+cd bash_completion.d/
+ls
+cd ..
+cd
+cd mirage-skeleton/
+ls
+cd lwt/
+ls
+cd src
+ls
+vim config.ml 
+mirage configure --unix
+mirage configure --Unix
+TARGET=heads1
+mirage configure --Unix
+mirage configure --unix
+TARGET='heads1'
+mirage configure --unix
+echo $TARGET
+mirage configuare --unix
+mirage configure --unix
+vim config.ml 
+mirage configure --unix TARGET=heads1
+vim config.ml 
+echo TARGET
+echo $TARGET
+vim config.ml 
+mirage configure --unix
+ls
+cd ..
+ls
+vim Makefile 
+make
+mirage configure --unix
+cd src/
+mirage configure --unix
+cd ..
+vim Makefile 
+cd src/
+env TARGET=heads1 mirage configure --unix
+ls
+./heads1.xe 
+make depend
+make 
+ls
+./mir-heads1 
+vim unikernels.ml 
+make clean
+ls
+cd ..
+ls
+cd ..
+vim script1.sh
+vim script2.sh
+cd mirage-skeleton/
+ls
+cd lwt
+ls
+c sr
+cd src
+env TARGET=heads1 mirage configure --unix
+make depend
+make 
+cd ..
+c d..
+cd 
+vim script2.sh 
+ls
+aptitude search lynx
+sudo aptitude install lynx
+ls
+vim script-www.sh
+cp script1.sh mirage-www/
+ls
+cd mirage-www/
+ls
+chmod +x script1.sh
+./script1.sh 
+vim script
+vim script1.sh 
+rm script1.sh 
+cp ../script-www.sh .
+chmod +x script-www.sh 
+./script-www.sh 
+cd src/
+tmux
+./mir-www 
+sudo ./mir-www 
+exit
+ps -u lilian | grep bash
+kill 18112
+kill 18829
+kill 18881
+kill 18896
+exit
+tmux attach
+ls
+cd /tmp
+ls
+rm tmux-1000/
+rm -rf tmux-1000/
+cd 
+tmux
+cd mirage-skeleton/
+cd ..
+cd mirage-www/
+cd src/
+ls
+cd /usr/lib/ocaml/
+ls
+grep -r graphics.a
+grep -r graphics.a .
+grep -rl graphics.a .
+ls
+cd caml/
+ls
+cd ..
+ls
+cd ocamlbuild/
+ls
+cd ..
+ls
+cd stublibs/
+ls
+cd ..
+ls
+cd camlp4/
+ls
+cd ..
+ls
+cd caml
+ls
+cd ..
+cd camlp4/
+ls
+cd Camlp4
+ls
+cd ..
+ls
+cd ..
+ls
+cd threads/
+ls
+cd ..
+ls -r
+man ls
+ls -r | grep raphic
+ls -alr | grep raphic
+whereis graphicsX11.mli
+locate graphicsX11.mli
+cd ocaml
+ls
+cd ocaml
+locate graphicsX11.mli
+vim graphics.mli 
+cd smartshell/
+git pull
+git merge
+cd .ssh/
+ls
+vim known_hosts 
+vim authorized_keys
+cd
+cd smartshell/
+ls
+git pull
+cd smartshell/
+git status
+git checkout src/demo.cpp
+git status 
+git pull
+ls
+cd src/
+ls
+vim demo.cpp 
+ls
+cd blog/
+ls
+exit
+cd blog/
+ls
+vim app/Http/routes.php 
+php artisan routelist
+php artisan route:list
+vim app/Http/routes.php 
+php artisan route:list
+ls
+vim app/Http/routes.php 
+php artisan route:list
+php artisan route:list | more
+php artisan route:list | w3m
+vim app/Http/controllers/ProjectsController.php
+cd app/Http/
+ls
+cd Controllers/
+ls
+vim ProjectsController.php 
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+cd public/
+ls
+vim index.php 
+cd ..
+ls
+vim .env
+lynx 127.0.0.1/blog/projects
+lynx 127.0.0.1/blog/
+lynx 127.0.0.1/blog/project
+vim app/Http/Controllers/ProjectsController.php 
+lynx 127.0.0.1/blog/project
+lynx 127.0.0.1/blog/projects
+vim app/Http/routes.php 
+php artisan route:list
+vim app/Http/routes.php 
+php artisan route:list
+php artisan route:list | w3m
+vim /resources/views/projects/index.blade.php
+cd resources/views/
+ls
+mkdir projects
+cd projects/
+ls
+vim index.blade.php
+cd ..
+cd app/Http/
+ls
+vim routes.php 
+cd /etc/apache2/
+ls
+cd sites-available/
+ls
+vim 000-default.conf 
+cd ..
+cd sites-enabled/
+vim 000-default.conf
+sudo -s
+ls
+cd 
+cd blog/
+ls
+cd app
+ls
+cd Http/
+ls
+cd ..
+cd resources/
+ls
+cd views/
+ls
+vim app.blade.php 
+ls
+cd projects/
+ls
+vim index.blade.php 
+cp index.blade.php         DocumentRoot /var/www/html
+l
+ls
+cp index.blade.php show.blade.php
+cp index.blade.php create.blade.php
+vim show.blade.php 
+vim create.blade.php 
+ls
+cd ~/blog/
+ls
+cd app/
+ls
+cd Http/
+ls
+cd Controllers/
+ls
+vim ProjectsController.php 
+cd ..
+ls
+vim routes.php 
+vim Controllers/ProjectsController.php 
+cd ..
+ls
+cd ..
+ls
+cd database/
+ls
+cd seeds/
+ls
+vim ProjectsTableSeeder.php 
+cd ..
+cd app
+ls
+vim Pro
+vim Project.php 
+cd Http/
+ls
+cd Controllers/
+ls
+vim TasksController.php 
+cd ..
+ls
+cd ..
+ls
+vim Pro
+vim Project.php 
+cd Http/
+ls
+cd Controllers/
+vim ProjectsController.php 
+vim TasksController.php 
+ls
+cd ..
+ls
+cd ..
+ls
+vim Project.php 
+cd Http/
+ls
+cd Controllers/
+ls
+vim ProjectsController.php 
+cd ..
+vim routes.php 
+cd Controllers/
+ls
+vim ProjectsController.php 
+vim TasksController.php 
+cd ..
+ls
+vim routes.php 
+cd Controllers/
+ls
+vim ProjectsController.php 
+vim TasksController.php 
+vim ProjectsController.php 
+ls
+vim ProjectsController.php 
+ls
+vim ProjectsController.php 
+ls
+vim TasksController.php 
+ls
+cd ..
+ls
+vim routes.php 
+cd ..
+ls
+php artisan app:name
+php artisan name
+php artisan 
+php artisan app:name App
+cd app/
+ls
+cd Providers/
+cd ..
+vim Project.php 
+cd Http/
+ls
+vim routes.php 
+cd Controllers/
+ls
+vim ProjectsController.php 
+vim Controller.php 
+vim TasksController.php 
+cd ../../..
+php artisan dump-autoload
+composer dump-autoload
+ls
+cd smartshell/
+ls
+git pull
+ls
+cd src/
+ls
+./demo 
+make
+ls
+./demo 
+vim demo.cpp 
+cd smartshell/
+ls
+cd src/
+ls
+./demo history_file 
+ls
+ping 8.8.8.8
+ping 192.168.0.1
+ping 127.0.0.01
+ping 8.8.8.8
+sudo -s
+ls
+git clone https://github.com/lilian0111/HistoryFinder.git
+cd HistoryFinder/
+ls
+vim TODO.md
+mkdir src
+git add *
+git add .
+ls
+git commit
+git push
+ls
+git add src
+ls
+git commit
+ssh bbsu@ptt.cc
+ssh bbsu@ptt2.cc
+ssh bbsu@ptt.cc
+ssh bbsu@ptt2.cc
+ssh bbsu@ptt.cc
+ssh bbsu@ptt2.cc
+ssh bbsu@ptt.cc
+ssh bbsu@ptt2.cc
+ssh bbsu@ptt.cc
+ssh bbsu@ptt2.cc
+ssh bbsu@ptt.cc
+cd smartshell/
+ls
+git pull
+git commit
+git log
+git reset 
+git pull
+git reset --hard bd38e2023f0294d14bbd74879cc2b844d66164fa
+git pull
+cd src/
+ls
+git log
+man history 
+history -a
+vim ~/.bash_history 
+history --help
+history help
+git log
+ssh bbsu@ptt2.cc
+ssh bbsu@ptt.cc
+ssh bbsu@ptt2.cc
+ssh bbsu@ptt.cc
+cd HistoryFinder/
+git pull
+ls
+vim TODO.md 
+cd ChromeExtension/
+ls
+cd 
+ping 8.8.8.8
+sudo service networking restart
+ping 8.8.8.8
+ls
+sudo service networking restart
+resolve
+resolveip 
+sudo -s
+ps -u lilian | less
+history | less
+ls
+sudo ifconfig tap0 10.0.0.1 255.255.255.0
+ifconfig
+sudo -s
+sudo ifconfig tap0 10.0.0.1 255.255.255.0
+sudo ifconfig 
+sudo ifconfig tap0 10.0.0.1 255.255.255.0
+sudo ifconfig tap0 10.0.0.2 255.255.255.0
+ping 10.0.0.2
+lynx 10.0.0.2
+lynx 10.0.0.1
+sudo ifconfig tap0 10.0.0.1 255.255.255.0
+sudo ifconfig tap0 10.0.0.3 255.255.255.0
+ifdown tap0
+sudo ifdown tap0
+service networking restart
+sudo service networking restart
+sudo ifconfig
+sudo -s
+ps -aux lilian
+ps -u lilian
+vim script-www.sh | grep bash
+sudo aptitude install cmake
+exit
+mkdir test
+cd test/
+mkdir cmake
+cd cmake/
+l
+mkdir ex1
+cd ex1/
+vim main.c
+vim CMakeLists.txt
+cmake .
+cmake
+cmake -version
+vim CMake
+ls
+vim CMakeLists.txt 
+cmake .
+ls
+vim Makefile 
+make
+ls
+./ex1 
+make clean
+ls
+vim CMakeFiles/
+cmake -P
+cmake
+cmake | less
+cmake -P test
+vim test
+cmake -P test 
+rm test 
+ssh bbsu@ptt.cc
+ssh bbsu@ptt2.cc
+ssh bbsu@ptt.cc
+sudo -s
+ssh bbsu@ptt2.cc
+ssh bbsu@ptt.cc
