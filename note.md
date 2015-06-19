@@ -29,9 +29,9 @@ rl\_line\_buffer 就是 "abc def ghi"
 這個變數歡迎隨便亂改, 只是亂改完不會馬上 apply 上去 (廢話...)
 
 #####rl\_point
-存現在的 cursor 在哪裡
-例如
-abc def ghi  
+存現在的 cursor 在哪裡  
+例如  
+abc def ghi    
    ^  
    |  
 cursor  
