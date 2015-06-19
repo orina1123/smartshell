@@ -1,7 +1,7 @@
 CXX = g++
 CPPFLAGS = -std=gnu++11 -lreadline
 #PROG = $$ predict test_HistoryWindow
-PROG = predict test_HistoryWindow final
+PROG = predict test_HistoryWindow final demo
 OBJ = \
 	  HistoryWindow \
 
