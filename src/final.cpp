@@ -112,9 +112,9 @@ rl_complete (ignore, invoking_key)
 //  else if (_rl_complete_show_all)
 //    return (rl_complete_internal ('!'));
 //  else if (_rl_complete_show_unmodified)
-//    return (rl_complete_internal ('@'));
+    return (rl_complete_internal ('@'));
 //  else 
-    return (rl_complete_internal (TAB));
+//    return (rl_complete_internal (TAB));
 
 //}
 
