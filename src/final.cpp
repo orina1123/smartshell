@@ -170,8 +170,13 @@ char * my_generator(const char* text, int state)
 		// TODO add color to the prob str XD
 		probstr = (char*) xmalloc(8);
 		probstr[0] = '\t';
-		snprintf(probstr+1, sizeof(probstr)-1, "%d", prob[list_idx]);
-		strcat(probstr, "%");
+		
+		// changed for color on probstr
+		sprintf(probstr+1,"\33[1;33m%d%\33[m",prob[list_idx]);
+		//snprintf(probstr+1, sizeof(probstr)-1, "%d", prob[list_idx]);
+		//strcat(probstr, "%");
+		
+
 		strncat(r, probstr, strlen(probstr));
 		free(probstr);
 		list_idx++;
