@@ -38,8 +38,13 @@ int prob[5] = {40, 30, 20, 5, 5};
 int main(int argc, char *argv[])
 {
 	char *buffer;
-	char curdir[500];
-	char newdir[500];
+	
+	char curdir[300];
+	char newdir[300];
+	char homedir[300];
+	FILE *fd=popen("echo $HOME","r");
+	fgets(homedir,295,fd);
+	homedir[strlen(homedir)-1]='\0';
 	int i;
 
 	string buf;
@@ -64,19 +69,37 @@ int main(int argc, char *argv[])
 		if (buf[0] != 0){
 			h_win->add_entry(buffer);
 		}
-		getcwd(curdir,495);
+		getcwd(curdir,295);
 		fprintf(stdout,"\33[1;36mcurrent directory : %s\33[m\n",curdir);
-		if (buf[0]=='c' && buf[1]=='d'){
-			for(i=3;i<strlen(buffer);i++){
-				newdir[i-3]=buf[i];
-			}
-			newdir[i-3]='\0';
-			if((chdir(newdir))<0){
-				printf("Change directory error!\n");
+		if (buf[0]=='c' && buf[1]=='d'){			
+			if(buf[3]!='~'){
+				for(i=3;i<strlen(buffer);i++){
+					newdir[i-3]=buf[i];
+				}
+				newdir[i-3]='\0';
+				if((chdir(newdir))<0){
+					printf("Change directory error!\n");
+				}
+				else{
+					getcwd(curdir,295);
+					fprintf(stdout,"\33[1;36mafter cd : %s\33[m\n",curdir);
+				}
 			}
 			else{
-				getcwd(curdir,495);
-				fprintf(stdout,"\33[1;36mafter cd : %s\33[m\n",curdir);
+				newdir[0]='\0';
+				strcpy(newdir,homedir);
+				int my_len=strlen(newdir);
+				for(i=4;i<strlen(buffer);i++){
+					newdir[my_len+i-4]=buf[i];
+				}
+				newdir[my_len+i-4]='\0';
+				if((chdir(newdir))<0){
+					printf("Change directory error!\n");
+				}
+				else{
+					getcwd(curdir,295);
+					fprintf(stdout,"\33[1;36mafter cd : %s\33[m\n",curdir);
+				}
 			}
 		}
 		else{
