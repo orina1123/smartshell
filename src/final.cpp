@@ -5,6 +5,7 @@
 #include <cstring>
 #include <string>
 #include <iostream>
+#include <unistd.h>
 
 #include "HistoryWindow.h"
 
@@ -37,6 +38,9 @@ int prob[5] = {40, 30, 20, 5, 5};
 int main(int argc, char *argv[])
 {
 	char *buffer;
+	char curdir[500];
+	char newdir[500];
+	int i;
 
 	string buf;
 	h_win = new HistoryWindow("../data/history_lilian_desktop", N, BACKSIZE);
@@ -49,6 +53,7 @@ int main(int argc, char *argv[])
 	rl_bind_keyseq("\\C-k", backward_kill_word_to_cmd);
 
 	while((buffer = readline("\n== SmartShell ==> ")) != NULL){
+		
 		rl_bind_key('\t', rl_complete);
 		rl_bind_keyseq ("\\C-k", backward_kill_word_to_cmd);
 		//rl_bind_keyseq ("\\C-n", rl_backward_kill_word);
@@ -59,8 +64,25 @@ int main(int argc, char *argv[])
 		if (buf[0] != 0){
 			h_win->add_entry(buffer);
 		}
-		cout << buffer << endl;
-		system(buffer);
+		getcwd(curdir,495);
+		fprintf(stdout,"\33[1;36mcurrent directory : %s\33[m\n",curdir);
+		if (buf[0]=='c' && buf[1]=='d'){
+			for(i=3;i<strlen(buffer);i++){
+				newdir[i-3]=buf[i];
+			}
+			newdir[i-3]='\0';
+			if((chdir(newdir))<0){
+				printf("Change directory error!\n");
+			}
+			else{
+				getcwd(curdir,495);
+				fprintf(stdout,"\33[1;36mafter cd : %s\33[m\n",curdir);
+			}
+		}
+		else{
+			cout << buffer << endl;
+			system(buffer);
+		}
 
 	}
 	return 0;
@@ -165,18 +187,12 @@ char * my_generator(const char* text, int state)
 
 	// TODO change to history list
 	while (name = data[list_idx]){
-		r = (char*) xmalloc(strlen(name) + 8);
+		r = (char*) xmalloc(strlen(name) + 16);
 		strcpy(r, name);
 		// TODO add color to the prob str XD
-		probstr = (char*) xmalloc(8);
+		probstr = (char*) xmalloc(16);
 		probstr[0] = '\t';
-		
-		// changed for color on probstr
 		sprintf(probstr+1,"\33[1;33m%d%\33[m",prob[list_idx]);
-		//snprintf(probstr+1, sizeof(probstr)-1, "%d", prob[list_idx]);
-		//strcat(probstr, "%");
-		
-
 		strncat(r, probstr, strlen(probstr));
 		free(probstr);
 		list_idx++;
