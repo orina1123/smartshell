@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <readline/readline.h>
 #include <readline/history.h>
+#include <cstring>
 #include <string>
 #include <iostream>
 
@@ -21,47 +22,17 @@ using namespace std;
 
 static char** my_completion(const char*, int ,int);
 static int backward_kill_word_to_cmd (int, int);
-//static int def_complete (int, int);
+void testdata_init(void);
+char * my_generator(const char*, int);
+void * xmalloc (int size);
 
 // HistoryWindow
 HistoryWindow* h_win;
 
 // for testing
-string data1 = string("CMD_A arg1 arg2 arg3 | CMD2 arg1 arg2");
-string data2 = string("CMD_A arg1 arg2 arg3 | CMD2 arg1 arg2");
-string data3 = string("CMD_A arg1 arg2 arg3 | CMD2 arg1 arg2");
-string data4 = string("CMD_A arg1 arg2 arg3 | CMD2 arg1 arg2");
+char* data[5] = {"CMD1 arg1 arg2", "CMD2", "CMD3", "cmd4", "cmd5 arg1"};
 // total 100
-int prob[5] = {0, 40, 30, 20, 10};
-
-
-
-
-
-/* Variables known only to the readline library. */
-
-/* If non-zero, non-unique completions always show the list of matches. */
-int _rl_complete_show_all = 0;
-
-/* If non-zero, non-unique completions show the list of matches, unless it
-   is not possible to do partial completion and modify the line. */
-int _rl_complete_show_unmodified = 0;
-
-/* If non-zero, completed directory names have a slash appended. */
-int _rl_complete_mark_directories = 1;
-
-/* If non-zero, the symlinked directory completion behavior introduced in
-   readline-4.2a is disabled, and symlinks that point to directories have
-   a slash appended (subject to the value of _rl_complete_mark_directories).
-   This is user-settable via the mark-symlinked-directories variable. */
-int _rl_complete_mark_symlink_dirs = 0;
-
-/* If non-zero, completions are printed horizontally in alphabetical order,
-   like `ls -x'. */
-int _rl_print_completions_horizontally;
-
-static int completion_changed_buffer;
-
+int prob[5] = {40, 30, 20, 5, 5};
 
 int main(int argc, char *argv[])
 {
@@ -69,7 +40,9 @@ int main(int argc, char *argv[])
 
 	string buf;
 	h_win = new HistoryWindow("../data/history_lilian_desktop", N, BACKSIZE);
-	//rl_attempted_completion_function = my_completion;
+	
+	rl_attempted_completion_function = my_completion;
+//	testdata_init();
 
 	// in first_line to 
 	rl_bind_key('\t', rl_complete);
@@ -93,36 +66,6 @@ int main(int argc, char *argv[])
 	return 0;
 }
 
-static int def_complete(int ignore, int invoking_key){
-
-
-	/*
-	   int
-	   rl_complete (ignore, invoking_key)
-	   int ignore, invoking_key;
-	   {
-	 */
-	//  rl_completion_invoking_key = invoking_key;
-	//  cout << endl << "invoking_key: " << invoking_key << endl;
-
-	//  if (rl_inhibit_completion)
-	//    return (_rl_insert_char (ignore, invoking_key));
-	//   if (rl_last_func == rl_complete && !completion_changed_buffer)
-	//    return (rl_complete_internal ('?'));
-	//  else if (_rl_complete_show_all)
-	//    return (rl_complete_internal ('!'));
-	//  else if (_rl_complete_show_unmodified)
-	//    return (rl_complete_internal ('@'));
-	//  else 
-	//    return (rl_complete_internal (TAB));
-
-	//}
-
-
-
-
-	//	rl_complete_internal(TAB);
-}
 
 /*****
   text, start, end
@@ -132,11 +75,32 @@ matches: array of string(char*)
 
 static char** my_completion (const char * text, int start, int end)
 {
-	char **matches;
-	
+	char **matches = (char**)NULL;
+	int i, idx;
+	char *c;
 
+	if (start == 0)
+		matches = rl_completion_matches((char*)text, &my_generator);
+	else
+		rl_bind_key('\t', rl_abort);
+	
+	free(matches[0]);
+	matches[0] = (char*)xmalloc(strlen(matches[1]));
+	c = strrchr(matches[1], '\t');
+	idx = c - matches[1];
+	strncpy(matches[0], matches[1], idx);
+	cout << endl;
+	i = 1;
+	while(matches != NULL && matches[i] != NULL){
+		cout << matches[i++] << endl;
+	}
+
+	rl_on_new_line();
+
+	return (matches);
 }
 
+/*
 static char** my_completion( const char * text , int start,  int end)
 {
 	char **matches;
@@ -182,9 +146,49 @@ static char** my_completion( const char * text , int start,  int end)
 	return (matches);
 
 }
+*/
 
+char * my_generator(const char* text, int state)
+{
+	static int list_idx, len;
+	char *name;
+	char *r;
+	char *probstr;
 
+	if(!state){
+		list_idx = 0;
+		len = strlen(text);
+		// TODO generate all possile list here
+		// save in static local arr of str
+		// or global arr of str
+	}
 
+	// TODO change to history list
+	while (name = data[list_idx]){
+		r = (char*) xmalloc(strlen(name) + 8);
+		strcpy(r, name);
+		// TODO add color to the prob str XD
+		probstr = (char*) xmalloc(8);
+		probstr[0] = '\t';
+		snprintf(probstr+1, sizeof(probstr)-1, "%d", prob[list_idx]);
+		strcat(probstr, "%");
+		strncat(r, probstr, strlen(probstr));
+		free(probstr);
+		list_idx++;
+		return r;	
+	}
+	return ((char*)NULL);
+}
+/*
+void testdata_init(void){
+
+	data[0] = "CMD_A arg1 arg2 arg3 | CMD2 arg1 arg2";
+	data[1] = "CMD_A arg1 arg2 arg3 | CMD2 arg1 arg2";
+	data[2] = "CMD_A arg1 arg2 arg3 | CMD2 arg1 arg2";
+	data[3] = "CMD_A arg1 arg2 arg3 | CMD2 arg1 arg2";
+	data[4] = "CMD_A arg1 arg2 arg3 | CMD2 arg1 arg2";
+}
+*/
 /*****
   reference to lib readline source code kill.c (function rl_backward_kill_word) and text.c
   kill all words except command (the 1st word)
@@ -215,4 +219,17 @@ static int backward_kill_word_to_cmd (int count, int ignore)
 		rl_point = prev_point;
 	}
 	return 0;
+}
+
+void * xmalloc (int size)
+{
+    void *buf;
+ 
+    buf = malloc (size);
+    if (!buf) {
+        fprintf (stderr, "Error: Out of memory. Exiting.'n");
+        exit (1);
+    }
+ 
+    return buf;
 }
