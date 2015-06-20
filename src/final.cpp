@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <readline/readline.h>
 #include <readline/history.h>
+#include <cstring>
 #include <string>
 #include <iostream>
 
@@ -19,12 +20,19 @@
 
 using namespace std;
 
-//static char** my_completion(const char*, int ,int);
-static int esc_function(int, int);
+static char** my_completion(const char*, int ,int);
 static int backward_kill_word_to_cmd (int, int);
+void testdata_init(void);
+char * my_generator(const char*, int);
+void * xmalloc (int size);
 
 // HistoryWindow
 HistoryWindow* h_win;
+
+// for testing
+char* data[5] = {"CMD1 arg1 arg2", "CMD2", "CMD3", "cmd4", "cmd5 arg1"};
+// total 100
+int prob[5] = {40, 30, 20, 5, 5};
 
 int main(int argc, char *argv[])
 {
@@ -32,18 +40,16 @@ int main(int argc, char *argv[])
 
 	string buf;
 	h_win = new HistoryWindow("../data/history_lilian_desktop", N, BACKSIZE);
-	//rl_attempted_completion_function = my_completion;
-
+	
+	rl_attempted_completion_function = my_completion;
+//	testdata_init();
 
 	// in first_line to 
 	rl_bind_key('\t', rl_complete);
 	rl_bind_keyseq("\\C-k", backward_kill_word_to_cmd);
 
 	while((buffer = readline("\n== SmartShell ==> ")) != NULL){
-		//enable auto-complete
 		rl_bind_key('\t', rl_complete);
-		//enable ESC functionality, esc in ascii == 27
-		//rl_bind_key(ESC, esc_function);
 		rl_bind_keyseq ("\\C-k", backward_kill_word_to_cmd);
 		//rl_bind_keyseq ("\\C-n", rl_backward_kill_word);
 		//rl_bind_keyseq("\\C-t", rl_kill_word);
@@ -60,60 +66,133 @@ int main(int argc, char *argv[])
 	return 0;
 }
 
-/*
-   static char** my_completion( const char * text , int start,  int end)
-   {
-   char **matches;
-   int ret;
-   char str[5]="test"; 
-   matches = (char **)NULL;
-//printf("[[%s]] %d,%d\n", text, start, end);  //text contains only ONE argument (seperated by blanks)
-//if (start == 0)
-//matches = rl_completion_matches ((char*)text, &my_generator);//TODO implement our func. to generate matches (replace rl_completion_matches())
-//matches = rl_completion_matches ((char*)rl_line_buffer, &my_generator);
-//else //** file completion part
-//    rl_bind_key('\t',rl_abort);
-if (matches != NULL){
-char *string;
-string = matches[0];
-//        printf("\n\n==%s\n", string);
-//        printf("\n");
-}
-//    printf("rl_line_buffer: %s\n", rl_line_buffer);
-//    ret = printf("rl_point: %s\n", rl_point);
-
-printf("%s\n", buffer);
-buffer[0] = "\0"; //empty the buffer
-//printf("%s\n", candidate_list.c_str());
-cout << candidate_list.str() << endl;
-candidate_list.clear();
-candidate_list.str(string());
-
-//new prompt
-//rl_delete_text(0, end);
-rl_on_new_line();
-rl_bind_key('\t',rl_complete);
-
-//process matches, remove the part before start
-int i=0;	
-while(matches != NULL && matches[i] != NULL)
-{
-//printf("^^%s\n", matches[i]);
-strcpy(matches[i], string(matches[i]).substr(start).c_str()); //FIXME (in our own completion_matches func.)
-++i;
-}
-
-return (matches);
-
-}
- */
-
-
 
 /*****
-reference to lib readline source code kill.c (function rl_backward_kill_word) and text.c
-kill all words except command (the 1st word)
-******/
+  text, start, end
+
+matches: array of string(char*)
+ *****/
+
+static char** my_completion (const char * text, int start, int end)
+{
+	char **matches = (char**)NULL;
+	int i, idx;
+	char *c;
+
+	if (start == 0)
+		matches = rl_completion_matches((char*)text, &my_generator);
+	else
+		rl_bind_key('\t', rl_abort);
+	
+	free(matches[0]);
+	matches[0] = (char*)xmalloc(strlen(matches[1]));
+	c = strrchr(matches[1], '\t');
+	idx = c - matches[1];
+	strncpy(matches[0], matches[1], idx);
+	cout << endl;
+	i = 1;
+	while(matches != NULL && matches[i] != NULL){
+		cout << matches[i++] << endl;
+	}
+
+	rl_on_new_line();
+
+	return (matches);
+}
+
+/*
+static char** my_completion( const char * text , int start,  int end)
+{
+	char **matches;
+	int ret;
+	char str[5]="test"; 
+	matches = (char **)NULL;
+	//printf("[[%s]] %d,%d\n", text, start, end);  //text contains only ONE argument (seperated by blanks)
+	//if (start == 0)
+	//matches = rl_completion_matches ((char*)text, &my_generator);//TODO implement our func. to generate matches (replace rl_completion_matches())
+	matches = rl_completion_matches ((char*)rl_line_buffer, &my_generator);
+	//else //** file completion part
+	//    rl_bind_key('\t',rl_abort);
+	if (matches != NULL){
+		char *string;
+		string = matches[0];
+		//        printf("\n\n==%s\n", string);
+		//        printf("\n");
+	}
+	//    printf("rl_line_buffer: %s\n", rl_line_buffer);
+	//    ret = printf("rl_point: %s\n", rl_point);
+
+	printf("%s\n", buffer);
+	buffer[0] = "\0"; //empty the buffer
+	//printf("%s\n", candidate_list.c_str());
+	cout << candidate_list.str() << endl;
+	candidate_list.clear();
+	candidate_list.str(string());
+
+	//new prompt
+	//rl_delete_text(0, end);
+	rl_on_new_line();
+	rl_bind_key('\t',rl_complete);
+
+	//process matches, remove the part before start
+	int i=0;	
+	while(matches != NULL && matches[i] != NULL)
+	{
+		//printf("^^%s\n", matches[i]);
+		strcpy(matches[i], string(matches[i]).substr(start).c_str()); //FIXME (in our own completion_matches func.)
+		++i;
+	}
+
+	return (matches);
+
+}
+*/
+
+char * my_generator(const char* text, int state)
+{
+	static int list_idx, len;
+	char *name;
+	char *r;
+	char *probstr;
+
+	if(!state){
+		list_idx = 0;
+		len = strlen(text);
+		// TODO generate all possile list here
+		// save in static local arr of str
+		// or global arr of str
+	}
+
+	// TODO change to history list
+	while (name = data[list_idx]){
+		r = (char*) xmalloc(strlen(name) + 8);
+		strcpy(r, name);
+		// TODO add color to the prob str XD
+		probstr = (char*) xmalloc(8);
+		probstr[0] = '\t';
+		snprintf(probstr+1, sizeof(probstr)-1, "%d", prob[list_idx]);
+		strcat(probstr, "%");
+		strncat(r, probstr, strlen(probstr));
+		free(probstr);
+		list_idx++;
+		return r;	
+	}
+	return ((char*)NULL);
+}
+/*
+void testdata_init(void){
+
+	data[0] = "CMD_A arg1 arg2 arg3 | CMD2 arg1 arg2";
+	data[1] = "CMD_A arg1 arg2 arg3 | CMD2 arg1 arg2";
+	data[2] = "CMD_A arg1 arg2 arg3 | CMD2 arg1 arg2";
+	data[3] = "CMD_A arg1 arg2 arg3 | CMD2 arg1 arg2";
+	data[4] = "CMD_A arg1 arg2 arg3 | CMD2 arg1 arg2";
+}
+*/
+/*****
+  reference to lib readline source code kill.c (function rl_backward_kill_word) and text.c
+  kill all words except command (the 1st word)
+ ******/
 
 static int backward_kill_word_to_cmd (int count, int ignore)
 {
@@ -140,4 +219,17 @@ static int backward_kill_word_to_cmd (int count, int ignore)
 		rl_point = prev_point;
 	}
 	return 0;
+}
+
+void * xmalloc (int size)
+{
+    void *buf;
+ 
+    buf = malloc (size);
+    if (!buf) {
+        fprintf (stderr, "Error: Out of memory. Exiting.'n");
+        exit (1);
+    }
+ 
+    return buf;
 }

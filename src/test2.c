@@ -14,6 +14,7 @@ char* his [12];
 
 char* buffer;
 
+FILE* log_f;
  
 int main()
 {
@@ -21,7 +22,7 @@ int main()
     char *buf;
     buffer = (char *) malloc(sizeof(char)*200);
     rl_attempted_completion_function = my_completion;
-
+//    log_f = fopen("log", "w");
     history_init();
  
     while((buf = readline("\n &gt;&gt; "))!=NULL) {
@@ -35,6 +36,8 @@ int main()
     }
  
     free(buf);
+//    fclose(log_f);
+
  
     return 0;
 }
@@ -72,7 +75,6 @@ char* my_generator(const char* text, int state)
     static int list_index, len;
     char *name;
     char *r;
-    char prob[5]="15%\n";
     
     if (!state) {
         list_index = 0;
@@ -80,7 +82,6 @@ char* my_generator(const char* text, int state)
     }
     //while (name = cmd[list_index]) {
     while (name = his[list_index]) {
-        list_index++;
         //printf("name: %s\n", name); 
         if (strncmp (name, text, len) == 0){
             r = (char*) xmalloc ((strlen (name) + 10));
@@ -91,10 +92,10 @@ char* my_generator(const char* text, int state)
             //free(r);
             return (dupstr(r));
         }
+        list_index++;
     }
  
-    /* If no names matched, then return NULL. */
-    return ((char *)NULL);
+    return (char*)NULL;
  
 }
 

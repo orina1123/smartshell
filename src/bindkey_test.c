@@ -3,9 +3,10 @@
 #include <readline/readline.h>
 
 int my_cool_readline_func (int count, int key) {
-   printf ("key pressed: %d\n", key);
-   printf ("count: %d\n", count);
-   rl_on_new_line ();
+   //printf ("key pressed: %d\n", key);
+   //printf ("count: %d\n", count);
+   rl_point = 0;
+   //rl_on_new_line ();
    return 0;
 }
 
