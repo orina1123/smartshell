@@ -87,11 +87,14 @@ static char** my_completion( const char * text , int start,  int end)
 	{
 		list = h_win->get_c_a_match_list(string(rl_line_buffer));
 	}
-	cout << endl;
-	cout.precision(2);
-	for(vector< pair<string, float> >::iterator it = list.begin(); it != list.end(); ++it)
+	if(list.size() > 0)
 	{
-		cout << "\t" << (*it).first << "\t" << fixed << (*it).second * 100 << "%" << endl;
+		cout << endl;
+		cout.precision(2);
+		for(vector< pair<string, float> >::iterator it = list.begin(); it != list.end(); ++it)
+		{
+			cout << "\t" << (*it).first << "\t" << fixed << (*it).second * 100 << "%" << endl;
+		}
 	}
 
 	//if (start == 0)
@@ -104,8 +107,11 @@ static char** my_completion( const char * text , int start,  int end)
 
 	//new prompt
 	//rl_delete_text(0, end);
-	rl_on_new_line();
-	rl_bind_key('\t',rl_complete);
+	if(matches != NULL)
+	{
+		rl_on_new_line();
+		rl_bind_key('\t',rl_complete);
+	}
 
 	//complete by the first condidate
 	if(matches != NULL && matches[1] != NULL)
