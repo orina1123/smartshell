@@ -34,7 +34,6 @@ char* his [N];
 //char* buffer;
 HistoryWindow* h_win;
 vector< pair<string, float> > list;
-string pre_line;
 
 int main(int argc, char* argv[])
 {
@@ -61,7 +60,6 @@ int main(int argc, char* argv[])
 		{
 			//add_history(buf);
 			h_win->add_entry(string(buf));
-			pre_line = string(buf);
 		}
 
 		//execute the entered command
@@ -78,7 +76,7 @@ static char** my_completion( const char * text , int start,  int end)
 	int ret;
 	char str[5]="test"; 
 	matches = (char **)NULL;
-	//printf("[[%s]] %d,%d\n", text, start, end);  //text contains only ONE argument (seperated by blanks)
+	//printf("\n[[%s]] %d,%d\n", text, start, end);  //text contains only ONE argument (seperated by blanks)
 	
 	//generate candidate list before completion
 	if(start == 0 && end == 0)
@@ -96,45 +94,12 @@ static char** my_completion( const char * text , int start,  int end)
 		cout << "\t" << (*it).first << "\t" << fixed << (*it).second * 100 << "%" << endl;
 	}
 
-
 	//if (start == 0)
 	matches = rl_completion_matches ((char*)text, &my_generator);
+	//cerr << "(got matches)" << endl; //OK
 	//matches = rl_completion_matches ((char*)rl_line_buffer, &my_generator);
 	//else //** file completion part
 	//    rl_bind_key('\t',rl_abort);
-
-	//cout << "##" << string(rl_line_buffer) << endl;
-	/*vector< pair<string, float> > list;
-	if(start == 0 && end == 0)
-	{
-		list = h_win->get_cmd_match_list(string(rl_line_buffer));
-	}
-	else
-	{
-		list = h_win->get_c_a_match_list(string(rl_line_buffer));
-	}
-
-	matches = (char **) xmalloc( (list.size()+1) * sizeof(char*) );
-	cout << endl;
-	cout.precision(4);
-	matches[0] = (char*) xmalloc(1 * sizeof(char));
-	strcpy(matches[0], ""); //FIXME prefix
-	int i = 1;
-	for(vector< pair<string, float> >::iterator it = list.begin(); it != list.end(); ++it) //TODO limit output # candidate
-	{
-		string line = (*it).first;
-		float prob = (*it).second;
-
-		matches[i] = (char*) xmalloc( (line.length() + 1) * sizeof(char) );
-		strcpy(matches[i], line.c_str());
-
-		if(i <= OUTPUT_NUM)
-			cout << "\t" << (*it).first << " " << fixed << (*it).second << endl;
-		
-		++i;
-	}
-	matches[i] = NULL;*/
-
 
 
 	//new prompt
@@ -143,8 +108,11 @@ static char** my_completion( const char * text , int start,  int end)
 	rl_bind_key('\t',rl_complete);
 
 	//complete by the first condidate
-	matches[0] = (char*) xmalloc(strlen(matches[1]) + 1);
-	strcpy(matches[0], matches[1]);
+	if(matches != NULL && matches[1] != NULL)
+	{
+		matches[0] = (char*) xmalloc(strlen(matches[1]) + 1);
+		strcpy(matches[0], matches[1]);
+	}
 
 	//process matches, remove the part before start
 	int i=0;	
@@ -155,7 +123,7 @@ static char** my_completion( const char * text , int start,  int end)
 		++i;
 	}
 
-	//cout << "(before return)" << endl; //OK
+	//cerr << "(before return)" << endl; //OK
 	return (matches);
 }
 
@@ -164,23 +132,21 @@ char* my_generator(const char* text, int state)
 	static int list_index, len;
 	char *name;
 	char *r;
-
 	if (!state) {
 		list_index = 0;
 		len = strlen (text);
 	}
 	while(list_index < list.size()) 
 	{
-		string next_line = list[list_index].first;
-		//candidate_list << "\n" << next_line << " " << list[list_index].second << "%";
+		string next_line = list.at(list_index).first;
 
 		list_index++;
 		return (dupstr( (char*)(next_line.c_str()) ));
 	}
 
+	//cerr << "my_generator()" << list_index << " " << list.size() << endl;
 	/* If no names matched, then return NULL. */
 	return ((char *)NULL);
-
 }
 
 void history_init(char* hist_file){

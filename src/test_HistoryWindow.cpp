@@ -37,6 +37,24 @@ int main(int argc, char* argv[])
 
 	}
 	
+	cout << "try match: gr" << endl;
+	cout << "(cmd_only)" << endl;
+	list = h_win.get_cmd_match_list("gr");
+	cout.precision(4);
+	for(vector< pair<string, float> >::iterator it = list.begin(); it != list.end(); ++it)
+	{
+		cout << "\t" << (*it).first << " " << fixed << (*it).second << endl;
+
+	}	
+	cout << "(with_args)" << endl;
+	list = h_win.get_c_a_match_list("gr");
+	cout.precision(4);
+	for(vector< pair<string, float> >::iterator it = list.begin(); it != list.end(); ++it)
+	{
+		cout << "\t" << (*it).first << " " << fixed << (*it).second << endl;
+
+	}
+
 	printf("\n\n==after add==\n");
 	h_win.add_entry("test a1 a2");
 
