@@ -34,7 +34,6 @@ char* his [N];
 //char* buffer;
 HistoryWindow* h_win;
 vector< pair<string, float> > list;
-stringstream candidate_list;
 string pre_line;
 
 int main(int argc, char* argv[])
@@ -45,9 +44,6 @@ int main(int argc, char* argv[])
 	rl_attempted_completion_function = my_completion;
 	rl_bind_key('\t', rl_complete);
 	rl_bind_keyseq("\\C-k", backward_kill_word_to_cmd);
-
-
-	//history_init(argv[1]); //FIXME merge into HistoryWindow
 
 	h_win = new HistoryWindow(argv[1], N, BACKSIZE);
 	h_win->show_window();
@@ -140,14 +136,15 @@ static char** my_completion( const char * text , int start,  int end)
 	matches[i] = NULL;*/
 
 
-	/*cout << candidate_list.str() << endl;
-	candidate_list.clear();
-	candidate_list.str(string());*/
 
 	//new prompt
 	//rl_delete_text(0, end);
 	rl_on_new_line();
 	rl_bind_key('\t',rl_complete);
+
+	//complete by the first condidate
+	matches[0] = (char*) xmalloc(strlen(matches[1]) + 1);
+	strcpy(matches[0], matches[1]);
 
 	//process matches, remove the part before start
 	int i=0;	
@@ -160,7 +157,6 @@ static char** my_completion( const char * text , int start,  int end)
 
 	//cout << "(before return)" << endl; //OK
 	return (matches);
-
 }
 
 char* my_generator(const char* text, int state)
