@@ -24,8 +24,8 @@ class HistoryWindow
 		int win_size;
 		deque<string> win_cmd_only;
 		deque<string> win_with_args;
-		set<string> all_cmd;
-		set<string> all_c_a;
+		map<string, int> all_cmd; //cnt -> last_history_num
+		map<string, int> all_c_a;
 	
 		int back_size;
 		map< string, map<string, int> >* cmd_cnt; //cmd_cnt[ back_size ][ cmd[i-back_size] ][ cmd[i] ] = n(cmd[i-back_size], cmd[i])

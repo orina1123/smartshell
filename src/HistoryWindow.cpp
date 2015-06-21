@@ -38,12 +38,23 @@ HistoryWindow::HistoryWindow(string hist_file, int win_size, int back_size) //co
     }
 
 	//push into window
-	i = 0;
-	for(vector<string>::reverse_iterator rit = tmp.rbegin(); rit != tmp.rend() && i < this->win_size; ++rit)
+	for(i = tmp.size() - this->win_size; i<tmp.size(); ++i)
 	{
+		string full_line = tmp[i];
+		string cmd = this->get_cmd_part(full_line);
+		
+		/*this->all_c_a.insert(full_line);
+		this->all_cmd.insert(cmd);*/
+
+		this->all_c_a[full_line] = i+1;
+		this->all_cmd[cmd] = i+1;
+
+		this->add_cnt(full_line);
+		this->win_with_args.push_back(full_line);
+		this->win_cmd_only.push_back(cmd);
+
 		//cout << *rit << endl;
-		this->add_entry(*rit);
-		++i;
+		//this->add_entry(*rit);
 	}
 }
 
@@ -62,9 +73,13 @@ void HistoryWindow::add_entry(string full_line)
 	
 	//GNU History Library storage
 	add_history(full_line.c_str());
+	//cout << "##" << history_length << endl;
 
-	this->all_c_a.insert(full_line);
-	this->all_cmd.insert(cmd);
+	/*this->all_c_a.insert(full_line);
+	this->all_cmd.insert(cmd);*/
+
+	this->all_c_a[full_line] = history_length;
+	this->all_cmd[cmd] = history_length;
 
 	this->add_cnt(full_line);
 	this->win_with_args.push_back(full_line);
@@ -157,41 +172,53 @@ int HistoryWindow::get_c_a_2_cnt(string pre2_c_a, string pre1_c_a, string c_a)
 	return this->c_a_2_cnt[make_pair(pre2_c_a, pre1_c_a)][c_a];
 }
 
-bool cmp(const std::pair<string,int> &left, const std::pair<string,int> &right) 
+/*bool cmp(const std::pair<string,int> &left, const std::pair<string,int> &right) 
 {
 	return (right.second < left.second); 
-}
+}*/
 vector< pair<string, float> > HistoryWindow::get_cmd_match_list(string input)
 {
 	vector< pair<string, float> > ret_list;
 
-	vector< pair<string, int> > candidates;
+	vector< tuple<string, int, int> > candidates;
 	string pre_cmd = this->win_cmd_only.back();
 	//cout << "##" << pre_cmd << endl;
 	int sum_cnt = 0;
-	for(set<string>::iterator it = this->all_cmd.begin(); it != this->all_cmd.end(); ++it)//get candidate from all appeared command
+	//for(set<string>::iterator it = this->all_cmd.begin(); it != this->all_cmd.end(); ++it)
+	for(map<string, int>::iterator it = this->all_cmd.begin(); it != this->all_cmd.end(); ++it)//get candidate from all appeared command
 	{
-		  string cmd = *it;
+		string cmd = it->first;
+		int h_num = it->second;
+		//cout << "**" << cmd << endl;
+		int cnt = this->get_cmd_cnt(1, pre_cmd, cmd);
+		if(input.compare( cmd.substr(0, input.length()) ) == 0)
+		{
 		  //cout << "**" << cmd << endl;
-		  int cnt = this->get_cmd_cnt(1, pre_cmd, cmd);
-		  if(input.compare( cmd.substr(0, input.length()) ) == 0)
-		  {
-			  //cout << "**" << cmd << endl;
-			  candidates.push_back(make_pair(cmd, cnt));
-			  sum_cnt += cnt;
-		  }
+		  candidates.push_back(make_tuple(cmd, cnt, h_num));
+		  sum_cnt += cnt;
+		}
 	}
 
-	std::sort(candidates.begin(), candidates.end(), [](const std::pair<string, int> &a, const std::pair<string, int> &b)
+	std::sort(candidates.begin(), candidates.end(), [](const tuple<string, int, int> &a, const tuple<string, int, int> &b)
 			{
-				return b.second<a.second;
+				//return b.second<a.second;
+				if( get<1>(b) < get<1>(a) ) return true;
+				if( get<1>(b) > get<1>(a) ) return false;
+
+				//same prob.
+				if( get<2>(b) < get<2>(a) ) return true;
+				if( get<2>(b) > get<2>(a) ) return false;
+
+				return false;
 			});
 	//std::sort(candidates.begin(), candidates.end());
-	for(vector< pair<string, int> >::iterator it = candidates.begin(); it != candidates.end(); ++it)
+	for(vector< tuple<string, int, int> >::iterator it = candidates.begin(); it != candidates.end(); ++it)
 	{
-		string cmd = (*it).first;
-		int cnt = (*it).second;
-		//cout << (*it).first << " " << (*it).second << endl;
+		string cmd = get<0>(*it);
+		int cnt = get<1>(*it);
+		int h_num = get<2>(*it);
+		//cout << cmd << " " << cnt << " " << h_num << endl;
+		
 		float prob;
 		if(sum_cnt > 0)
 			prob = (float)cnt / sum_cnt;
@@ -208,25 +235,50 @@ vector< pair<string, float> > HistoryWindow::get_c_a_match_list(string input)
 {
 	vector< pair<string, float> > ret_list;
 
-	vector< pair<string, int> > candidates;
+	//vector< pair<string, int> > candidates;
+	vector< tuple<string, int, int> > candidates;
 	string pre_c_a = this->win_with_args.back();
 	int sum_cnt = 0;
-	for(set<string>::iterator it = this->all_c_a.begin(); it != this->all_c_a.end(); ++it)//get candidate from all appeared command
+	//for(set<string>::iterator it = this->all_c_a.begin(); it != this->all_c_a.end(); ++it)//get candidate from all appeared command
+	for(map<string, int>::iterator it = this->all_c_a.begin(); it != this->all_c_a.end(); ++it)//get candidate from all appeared command
 	{
-		  string c_a = *it;
-		  int cnt = this->get_c_a_cnt(1, pre_c_a, c_a);
-		  if(input.compare( c_a.substr(0, input.length()) ) == 0)
-		  {
-			  candidates.push_back(make_pair(c_a, cnt));
-			  sum_cnt += cnt;
-		  }
+		//string c_a = *it;
+		string c_a = it->first;
+		int h_num = it->second;
+
+		int cnt = this->get_c_a_cnt(1, pre_c_a, c_a);
+		if(input.compare( c_a.substr(0, input.length()) ) == 0)
+		{
+			candidates.push_back(make_tuple(c_a, cnt, h_num));
+			sum_cnt += cnt;
+		}
 	}
 
-	std::sort(candidates.begin(), candidates.end(), cmp);
-	for(vector< pair<string, int> >::iterator it = candidates.begin(); it != candidates.end(); ++it)
+	//std::sort(candidates.begin(), candidates.end(), cmp);
+	std::sort(candidates.begin(), candidates.end(), [](const tuple<string, int, int> &a, const tuple<string, int, int> &b)
+			{
+				//return b.second<a.second;
+				if( get<1>(b) < get<1>(a) ) return true;
+				if( get<1>(b) > get<1>(a) ) return false;
+
+				//same prob.
+				if( get<2>(b) < get<2>(a) ) return true;
+				if( get<2>(b) > get<2>(a) ) return false;
+
+				return false;
+			});
+
+	//for(vector< pair<string, int> >::iterator it = candidates.begin(); it != candidates.end(); ++it)
+	for(vector< tuple<string, int, int> >::iterator it = candidates.begin(); it != candidates.end(); ++it)
 	{
-		string c_a = (*it).first;
-		int cnt = (*it).second;
+		/*string c_a = (*it).first;
+		int cnt = (*it).second;*/
+		
+		string c_a = get<0>(*it);
+		int cnt = get<1>(*it);
+		int h_num = get<2>(*it);
+		//cout << c_a << " " << cnt << " " << h_num << endl;
+
 		float prob;
 		if(sum_cnt > 0)
 			prob = (float)cnt / sum_cnt;
