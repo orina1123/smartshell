@@ -26,6 +26,8 @@ static int backward_kill_word_to_cmd (int, int);
 void testdata_init(void);
 char * my_generator(const char*, int);
 void * xmalloc (int size);
+char *change_directory(char *);
+void home_directory(void);
 
 // HistoryWindow
 HistoryWindow* h_win;
@@ -35,17 +37,14 @@ char* data[5] = {"CMD1 arg1 arg2", "CMD2", "CMD3", "cmd4", "cmd5 arg1"};
 // total 100
 int prob[5] = {40, 30, 20, 5, 5};
 
+char homedir[300];
+
 int main(int argc, char *argv[])
 {
 	char *buffer;
 	
+	home_directory();	
 	char curdir[300];
-	char newdir[300];
-	char homedir[300];
-	FILE *fd=popen("echo $HOME","r");
-	fgets(homedir,295,fd);
-	homedir[strlen(homedir)-1]='\0';
-	int i;
 
 	string buf;
 	h_win = new HistoryWindow("../data/history_lilian_desktop", N, BACKSIZE);
@@ -57,6 +56,8 @@ int main(int argc, char *argv[])
 	rl_bind_key('\t', rl_complete);
 	rl_bind_keyseq("\\C-k", backward_kill_word_to_cmd);
 
+	getcwd(curdir,295);
+	fprintf(stdout,"\n\33[1;36mcurrent directory : %s\33[m",curdir);
 	while((buffer = readline("\n== SmartShell ==> ")) != NULL){
 		
 		rl_bind_key('\t', rl_complete);
@@ -69,37 +70,9 @@ int main(int argc, char *argv[])
 		if (buf[0] != 0){
 			h_win->add_entry(buffer);
 		}
-		getcwd(curdir,295);
-		fprintf(stdout,"\33[1;36mcurrent directory : %s\33[m\n",curdir);
-		if (buf[0]=='c' && buf[1]=='d'){			
-			if(buf[3]!='~'){
-				for(i=3;i<strlen(buffer);i++){
-					newdir[i-3]=buf[i];
-				}
-				newdir[i-3]='\0';
-				if((chdir(newdir))<0){
-					printf("Change directory error!\n");
-				}
-				else{
-					getcwd(curdir,295);
-					fprintf(stdout,"\33[1;36mafter cd : %s\33[m\n",curdir);
-				}
-			}
-			else{
-				newdir[0]='\0';
-				strcpy(newdir,homedir);
-				int my_len=strlen(newdir);
-				for(i=4;i<strlen(buffer);i++){
-					newdir[my_len+i-4]=buf[i];
-				}
-				newdir[my_len+i-4]='\0';
-				if((chdir(newdir))<0){
-					printf("Change directory error!\n");
-				}
-				else{
-					getcwd(curdir,295);
-					fprintf(stdout,"\33[1;36mafter cd : %s\33[m\n",curdir);
-				}
+		if (buf[0]=='c' && buf[1]=='d'){
+			if((chdir(change_directory(buffer)))<0){
+				fprintf(stdout,"cd ERROR!\n");
 			}
 		}
 		else{
@@ -107,6 +80,8 @@ int main(int argc, char *argv[])
 			system(buffer);
 		}
 
+		getcwd(curdir,295);
+		fprintf(stdout,"\n\33[1;36mcurrent directory : %s\33[m",curdir);
 	}
 	return 0;
 }
@@ -276,4 +251,34 @@ void * xmalloc (int size)
     }
  
     return buf;
+}
+
+void home_directory(void){
+	FILE *fd=popen("echo $HOME","r");
+	fgets(homedir,295,fd);
+	homedir[strlen(homedir)-1]='\0';
+}
+
+char *change_directory(char * command){
+	int i;
+	int my_len;
+	char *newdir=(char*)malloc(300);
+
+	if(command[3]=='~'){
+		newdir[0]='\0';
+		strcpy(newdir,homedir);
+		my_len=strlen(homedir);
+		for(i=4;i<strlen(command);i++){
+			newdir[my_len+i-4]=command[i];
+		}
+		newdir[my_len+i-4]='\0';
+		return newdir;
+	}
+	else{
+		for(i=3;i<strlen(command);i++){
+			newdir[i-3]=command[i];
+		}
+		newdir[i-3]='\0';
+		return newdir;
+	}
 }
