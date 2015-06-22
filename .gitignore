@@ -1,3 +1,4 @@
 src/demo
 src/*.o
 src/final
+src/$
