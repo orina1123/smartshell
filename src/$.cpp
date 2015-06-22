@@ -25,6 +25,7 @@ using namespace std;
 static char** my_completion(const char*, int ,int);
 char* my_generator(const char*,int);
 static int backward_kill_word_to_cmd (int, int);
+static int select_completion_predict (int, int);
 char *dupstr (char*);
 void *xmalloc (int);
 void home_directory(void);
@@ -32,6 +33,9 @@ char *change_directory(char *);
 
 HistoryWindow* h_win;
 vector< pair<string, float> > list;
+int global_list_idx = -1;
+// initial to < 0 value prevent execute select_completion_predict to get null in vector list
+int global_list_idx_max = 0;
 
 char homedir[300];
 
@@ -46,6 +50,8 @@ int main(int argc, char* argv[])
 	rl_attempted_completion_function = my_completion;
 	rl_bind_key('\t', rl_complete);
 	rl_bind_keyseq("\\C-k", backward_kill_word_to_cmd);
+	rl_bind_keyseq("\\C-p", select_completion_predict);
+	rl_bind_keyseq("\\C-n", select_completion_predict);
 
 	h_win = new HistoryWindow(argv[1], N, BACKSIZE);
 	h_win->show_window();
@@ -53,9 +59,14 @@ int main(int argc, char* argv[])
 	getcwd(curdir,295);
 	fprintf(stdout,"\n\33[1;36mcurrent directory : %s\33[m",curdir);
 	while((buf = readline("\n== SmartShell ==> "))!=NULL) { //TODO working directory
+		// for change to the next/previous predict completion
+		cout << "test"<< endl;
+
 		//enable auto-complete
 		rl_bind_key('\t',rl_complete);
 		rl_bind_keyseq("\\C-k", backward_kill_word_to_cmd);
+		rl_bind_keyseq("\\C-p", select_completion_predict);
+		rl_bind_keyseq("\\C-n", select_completion_predict);
 
 		if (strcmp(buf,"exit")==0)
 			break;
@@ -139,6 +150,8 @@ static char** my_completion( const char * text , int start,  int end)
 	}
 
 	//cerr << "(before return)" << endl; //OK
+	global_list_idx = 0;
+	global_list_idx_max = list.size();
 	return (matches);
 }
 
@@ -189,6 +202,41 @@ static int backward_kill_word_to_cmd (int count, int ignore)
 		rl_point = prev_point;
 	}
 	return 0;
+}
+
+static int select_completion_predict (int count, int key)
+{
+	/*cout << endl << "infunc " << key << endl;
+	cout << count << endl;
+	cout << global_list_idx << " " << global_list_idx_max << endl;
+	*/
+	int idx = (key == 14) ? global_list_idx +1 : global_list_idx -1;
+	if(idx < 0)
+		return 0;
+	if(idx >= global_list_idx_max)
+		return 0;
+	global_list_idx = idx;
+
+	//char *new_str = list.at(idx).first.c_str();
+	//cout << "before rl_buf " << rl_line_buffer << endl;
+	rl_delete_text(0, rl_point);
+	//cout << "after del: " << rl_point << endl;
+	rl_point = 0;
+	rl_insert_text(list.at(idx).first.c_str());
+	//cout << "after ins: " << rl_point << endl;
+	//cout << endl << rl_line_buffer << endl;
+	//cout << "rl_point: " << rl_point << endl;
+	if (rl_editing_mode == emacs_mode)
+		rl_mark = rl_point;
+	
+	//free(rl_line_buffer);
+
+	//rl_line_buffer = (char*)xmalloc(list.at(idx).first.size()+1);
+	//strcpy(rl_line_buffer, list.at(idx).first.c_str());
+	cout << endl;
+	rl_on_new_line();
+	return 0;
+	
 }
 
 char * dupstr (char * s) {

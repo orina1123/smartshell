@@ -23,6 +23,7 @@ using namespace std;
 
 static char** my_completion(const char*, int ,int);
 static int backward_kill_word_to_cmd (int, int);
+//static int select_completion_predict (int, int);
 void testdata_init(void);
 char * my_generator(const char*, int);
 void * xmalloc (int size);
@@ -55,13 +56,17 @@ int main(int argc, char *argv[])
 	// in first_line to 
 	rl_bind_key('\t', rl_complete);
 	rl_bind_keyseq("\\C-k", backward_kill_word_to_cmd);
+//	rl_bind_keyseq("\\C-m", select_completion_predict);
+//	rl_bind_keyseq("\\C-j", select_completion_predict);
 
 	getcwd(curdir,295);
 	fprintf(stdout,"\n\33[1;36mcurrent directory : %s\33[m",curdir);
 	while((buffer = readline("\n== SmartShell ==> ")) != NULL){
 		
 		rl_bind_key('\t', rl_complete);
-		rl_bind_keyseq ("\\C-k", backward_kill_word_to_cmd);
+		rl_bind_keyseq("\\C-k", backward_kill_word_to_cmd);
+//		rl_bind_keyseq("\\C-m", select_completion_predict);
+//		rl_bind_keyseq("\\C-j", select_completion_predict);
 		//rl_bind_keyseq ("\\C-n", rl_backward_kill_word);
 		//rl_bind_keyseq("\\C-t", rl_kill_word);
 		buf = string(buffer);
@@ -239,6 +244,11 @@ static int backward_kill_word_to_cmd (int count, int ignore)
 	}
 	return 0;
 }
+/*
+static int select_completion_predict (int count, int key)
+{
+	
+*/
 
 void * xmalloc (int size)
 {
