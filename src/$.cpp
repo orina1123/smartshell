@@ -59,8 +59,6 @@ int main(int argc, char* argv[])
 	getcwd(curdir,295);
 	fprintf(stdout,"\n\33[1;36mcurrent directory : %s\33[m",curdir);
 	while((buf = readline("\n== SmartShell ==> "))!=NULL) { //TODO working directory
-		// for change to the next/previous predict completion
-		cout << "test"<< endl;
 
 		//enable auto-complete
 		rl_bind_key('\t',rl_complete);
@@ -233,8 +231,8 @@ static int select_completion_predict (int count, int key)
 
 	//rl_line_buffer = (char*)xmalloc(list.at(idx).first.size()+1);
 	//strcpy(rl_line_buffer, list.at(idx).first.c_str());
-	cout << endl;
-	rl_on_new_line();
+//	cout << endl;
+//	rl_on_new_line();
 	return 0;
 	
 }
