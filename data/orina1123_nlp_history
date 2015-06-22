@@ -1,0 +1,991 @@
+ls
+vim 01_align_paragraph.pl 
+perl 01_align_paragraph.pl -m ch.in en.in
+vim 01_align_paragraph.pl 
+perl 01_align_paragraph.pl -m ch.in en.in
+vim 01_align_paragraph.pl 
+ls
+perl 01_align_paragraph.pl -e
+vim 01_align_paragraph.pl 
+perl 01_align_paragraph.pl -e
+vim 01_align_paragraph.pl 
+perl 01_align_paragraph.pl -e
+vim 01_align_paragraph.pl 
+perl 01_align_paragraph.pl -e
+perl 01_align_paragraph.pl -e en_ch.txt 3 -2 1
+vim 01_align_paragraph.pl 
+perl 01_align_paragraph.pl -e en_ch.txt 3 -2 1
+perl 01_align_paragraph.pl -e en_ch.txt 3 +2 1
+vim 01_align_paragraph.pl 
+perl 01_align_paragraph.pl -e en_ch.txt 1 +2 1
+vim 01_align_paragraph.pl 
+perl 01_align_paragraph.pl -e en_ch.txt 3 -2 1
+perl 01_align_paragraph.pl -e en_ch.txt 1 +2 1
+vim 01_align_paragraph.pl 
+perl 01_align_paragraph.pl -e en_ch.txt 1 +2 1
+vim 01_align_paragraph.pl 
+perl 01_align_paragraph.pl -e en_ch.txt 1 +2 1
+vim 01_align_paragraph.pl 
+perl 01_align_paragraph.pl -e en_ch.txt 1 +2 1
+vim 01_align_paragraph.pl 
+perl 01_align_paragraph.pl -e en_ch.txt 1 +2 1
+vim 01_align_paragraph.pl 
+perl 01_align_paragraph.pl -e en_ch.txt 1 +2 1
+vim 01_align_paragraph.pl 
+perl 01_align_paragraph.pl -e en_ch.txt 1 +2 1
+vim 01_align_paragraph.pl 
+perl 01_align_paragraph.pl -e en_ch.txt 1 +2 1
+vim 01_align_paragraph.pl 
+perl 01_align_paragraph.pl -e en_ch.txt 1 +2 1
+vim 01_align_paragraph.pl 
+perl 01_align_paragraph.pl -e en_ch.txt 1 +2 1
+vim 01_align_paragraph.pl 
+perl 01_align_paragraph.pl -e en_ch.txt 1 +2 1
+vim 01_align_paragraph.pl 
+perl 01_align_paragraph.pl -e en_ch.txt 1 +2 1
+perl 01_align_paragraph.pl -e en_ch.txt 3 -2 1
+perl 01_align_paragraph.pl -e 
+cd ..
+cd smartshell
+ls
+cd src/
+ls
+vim \$.cpp 
+ls
+cd smartshell
+ls
+cd src/
+ls
+vim HistoryWindow.h
+history | grep g++
+g++ test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow 
+vim HistoryWindow.cpp 
+ls
+vim \$.cpp 
+ls
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+./test_HistoryWindow
+vim test_HistoryWindow.cpp 
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+./test_HistoryWindow
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+./test_HistoryWindow
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+./test_HistoryWindow | less
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+ls
+make clean
+ls
+rm \$.o
+ls
+rm test_HistoryWindow -rf
+ls
+rm predict.o -rf
+vim Makefile 
+ls
+cd ..
+git status
+git add -A
+git status
+git commit -m "Makefile & fix segfault of HistoryWindow"
+git pull
+git push
+ls
+cd src/
+ls
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+echo $HISTFILESIZE
+vim /home/orina1123/.bashrc
+ls
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+./test_HistoryWindow | less
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+./test_HistoryWindow
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim test_HistoryWindow.cpp 
+vim test_HistoryWindow.cpp 
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim test_HistoryWindow.cpp 
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+vim test_HistoryWindow.cpp 
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim test_HistoryWindow.cpp 
+ls
+rm test_HistoryWindow -rf
+cd ..
+git status
+git add -A
+git commit -m "finish command count"
+git pull
+git push
+ls
+cd src/
+ls
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+vim test_HistoryWindow.cpp 
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.h
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+./test_HistoryWindow | less
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim test_HistoryWindow.cpp 
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim test_HistoryWindow.cpp 
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+ls
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim test_HistoryWindow.cpp 
+vim test_HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+vim HistoryWindow.cpp 
+g++ -lreadline test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+./test_HistoryWindow | less
+screen -list
+vim .bash_history 
+vim /home/orina1123/.bashrc
+exit
+vim .bash_history 
+ls
+cd smartshell
+ls
+mkdir data
+ls
+cd src/
+ls
+mv test_history ../data/
+rm test_HistoryWindow -rf
+ls
+cd ..
+git status
+git add -A
+git status
+git commit -m "finish match list generation"
+git pull
+git push
+ls
+cd src/
+ls
+ls
+cd ..
+ls data/
+vim data/test_history 
+ls
+ls
+cd src/
+ls
+vim history_file 
+history | less
+ls
+mv history_file ../data/
+ls
+vim \$.cpp 
+make
+vim \$.cpp 
+make
+vim Makefile 
+make
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$ | less
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$ 2>log
+vim log 
+vim Makefile 
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$ 2>log
+vim log 
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$ 2>log
+vim log 
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$ 2>log
+vim \$.cpp 
+vim log 
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$ 2>log
+vim log 
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$
+./$
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$
+./$
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$
+./$
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$
+./$ ../data/test_history 
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$
+./$ ../data/test_history 
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$
+./$ ../data/test_history 
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$
+./$ ../data/test_history 
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$
+./$ ../data/test_history 
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$
+./$ ../data/test_history 
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$
+./$ ../data/test_history 
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$
+./$ ../data/test_history 
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$
+./$ ../data/test_history 
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$
+./$ ../data/test_history 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$
+./$ ../data/test_history 
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$
+./$ ../data/test_history 
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$
+./$ ../data/test_history 
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$
+./$ ../data/test_history 
+./$ ../data/test_history 
+vim \$.cpp 
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$
+./$ ../data/test_history 
+./$ ../data/test_history 
+vim \$.cpp 
+ls
+vim Makefile 
+make vlean
+make clean
+make 
+vim Makefile 
+compress
+g++ -lreadline \$.cpp HistoryWindow.cpp -o \$
+./$ ../data/test_history 
+vim HistoryWindow.h
+make clean
+ls
+g++ -lreadline $.cpp HistoryWindow.cpp -o $
+cd ..
+git status
+cd src/
+ls
+rm log  -rf
+cd ..
+git status
+git add -A
+git status
+ls
+cd src/
+ls
+make clean
+cd ..
+git add -A
+git status
+git commit -m "connect HistoryWindow into $.cpp"
+git push
+git log
+cd src/
+ls
+vim Makefile 
+alias
+vi
+vi Makefile
+make
+vi Makefile
+vi Makefile
+mak
+make
+vi Makefile
+make clena
+make clean
+make
+vi Makefile
+make clean
+make
+exit
+vim .bash_history 
+ls
+cd smartshell/src/
+ls
+vim HistoryWindow.cpp 
+make
+ls
+vi Makefile 
+ls
+vi Makefile 
+make
+vi Makefile 
+vim HistoryWindow.cpp 
+make
+ls
+make clean
+vim HistoryWindow.cpp 
+vim test_HistoryWindow.cpp 
+ls
+g++ test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+g++ -std=c++11 test_HistoryWindow.cpp HistoryWindow.cpp -o test_HistoryWindow
+g++ -std=c++11 test_HistoryWindow.cpp HistoryWindow.cpp -lreadline -o test_HistoryWindow
+./test_HistoryWindow ../data/test_history 
+vim Makefile 
+make clean
+ls
+make
+vim Makefile 
+make
+make clean
+make
+make clean
+ls
+cd ..
+git status
+git commit -m "add HistoryWindow into Makefile"
+git add -A
+git commit -m "add HistoryWindow into Makefile"
+git push
+ls
+ls
+cd src/
+ls
+make clean
+ls
+vim Makefile 
+rm *.o -rf
+ls
+make
+ls
+vim Makefile 
+make clean
+ls
+make 
+ls
+make clean
+ls
+cd ..
+git status
+vim .gitignore 
+ls
+git add -S
+git add -A
+git commit -m "edit Makefile to clean object files"
+git push
+git log
+vim /home/orina1123/.bash_history 
+ls
+exit
+cd ctk-pack/
+ls
+cp ~/Dropbox//NLP/ctk-pack/out6 .
+ls
+perl 01_align_paragraph.text -e out6 202 4312 +8 out7
+perl 01_align_paragraph.pl -e out6 202 4312 +8 out7
+perl 01_align_paragraph.pl -e out6 202 4312 +8 1 out7
+vim 01_align_paragraph.pl 
+cd ctk-pack/
+ls
+cp 01_align_paragraph.pl ~/Dropbox/NLP/ctk-pack/
+vim out6 
+vim out7
+cd smartshell
+ls
+git pu;;
+git pull
+cd src/
+vim final.cpp 
+ls
+vim /home/orina1123/.bash_history 
+cd ..
+git pull
+ls
+cd src/
+ls
+vim evaluation.c 
+ls
+vim Makefile 
+ls
+make
+./final 
+vim final
+ls
+cd smartshell
+ls
+cd src/
+vim final.cpp 
+ls
+ls -al
+vim demo.cpp 
+vim final.cpp 
+ls
+vim test2.c 
+ls
+git branch
+git
+git pull --all
+git fetch --all
+git branch
+cd ..
+ls
+ls -al
+cd .git/
+ls
+vim config 
+ls
+cd ..
+ls
+cd src/
+ls
+cd ..
+cd ..
+ls
+rm smartshell -rf
+git clone https://github.com/orina1123/smartshell.git
+cd smartshell
+ls
+git branch
+git branch -a
+git checkout -b demo
+git checkout -b remotes/origin/demo origin/demo
+git branch -a
+git branch -d
+git branch -a
+cd ..
+rm smartshell -rf
+git clone https://github.com/orina1123/smartshell.git
+cd smartshell
+ls
+git branch -a
+git checkout -b remotes/origin/demo
+git branch -a
+cd src/
+ls
+make
+./final 
+vim final.cpp 
+ls
+cd ..
+git pull --all
+git pull demo --all
+git pull --all demo
+git diff master 
+git diff master remotes/origin/demo
+git branch
+git branch -a
+git checkout -a master
+git checkout -b master
+git branch
+git branch master
+git pull
+cd ..
+rm smartshell -rf
+git clone https://github.com/orina1123/smartshell.git
+cd smartshell
+ls
+cd src/
+l
+ls
+make
+./final 
+vim final.cpp 
+ls
+vim demo.cpp 
+ls
+make clean
+ls
+rm *.out -rf
+ls
+cp demo.cpp $.cpp
+vim Makefile 
+vim \$.cpp 
+vimdiff \$.cpp final.cpp 
+ls
+vim \$.cpp 
+vim final.cpp 
+vim \$.cpp 
+make
+./$ ../data/history_lilian_desktop 
+.$ ../data/history_lilian_desktop 
+vim Makefile 
+make 
+vim \$.cpp 
+make 
+vim \$.cpp 
+make 
+.$ ../data/history_lilian_desktop 
+./$ ../data/history_lilian_desktop 
+ls
+vim \$.cpp 
+./$ ../data/history_lilian_desktop 
+vim \$.cpp 
+make 
+./$ ../data/history_lilian_desktop 
+vim \$.cpp 
+make
+vim \$.cpp 
+make
+vim \$.cpp 
+make
+./$ ../data/history_lilian_desktop 
+ls
+vim \$.cpp 
+make
+./$ ../data/history_lilian_desktop 
+vim \$.cpp 
+./$ ../data/history_lilian_desktop 
+make
+./$ ../data/history_lilian_desktop 
+ls
+vim \$.cpp 
+make
+./$ ../data/history_lilian_desktop 
+vim \$.cpp 
+make
+vim \$.cpp 
+make
+vim \$.cpp 
+make
+./$ ../data/history_lilian_desktop 
+vim \$.cpp 
+make
+./$ ../data/history_lilian_desktop 
+vim \$.cpp 
+make
+./$ ../data/history_lilian_desktop 
+vim \$.cpp 
+make
+./$ ../data/history_lilian_desktop 
+vim \$.cpp 
+make
+./$ ../data/history_lilian_desktop 
+vim \$.cpp 
+make
+./$ ../data/history_lilian_desktop 
+vim \$.cpp 
+make
+./$ ../data/history_lilian_desktop 
+vim \$.cpp 
+make
+./$ ../data/history_lilian_desktop 
+vim \$.cpp 
+make
+./$ ../data/history_lilian_desktop 
+vim \$.cpp 
+make
+vim \$.cpp 
+make
+vim \$.cpp 
+make
+vim \$.cpp 
+make
+vim \$.cpp 
+make
+vim \$.cpp 
+vim \$.cpp 
+make
+vim \$.cpp 
+make
+vim \$.cpp 
+make
+vim \$.cpp 
+make
+vim \$.cpp 
+make
+./$ ../data/history_lilian_desktop 
+vim \$.cpp 
+make
+./$ ../data/history_lilian_desktop 
+cd smartshell
+git pusll
+git pull
+cd src/
+ls
+vim final.cpp 
+make
+./final 
+ls
+vim final.cpp 
+cd smartshell
+git pull
+cd src/
+ls
+make
+./final
+./\$ ../data/history_lilian_desktop 
+./final
+vim final.cpp 
+cd smartshell
+git pull
+cd src/
+ls
+make
+./\$ ../data/history_lilian_desktop 
+ls
+vim \$.cpp 
+./\$ ~/.bash_history 
+ls
+cd ..
+git pull
+cd src/
+make
+./\$ ../data/history_lilian_desktop 
+vim ~/.bash_history 
