@@ -1,0 +1,2000 @@
+ls
+vim README 
+cd ..
+cd Q6
+ls
+vim README 
+cd ../../
+ls
+cd 7
+ls
+cd ..
+cd 6
+ls
+vim Q1/
+cd Q2
+ls
+cp ../../8/Q2/white .
+cp ../../8/Q2/create.sh .
+ls
+./clean.sh -h
+./create.sh 
+./clean.sh test/ white 
+tree
+vim clean.sh 
+ls
+cp white test/
+./create.sh 
+./clean.sh test/ white 
+tree
+vim create.sh 
+./create.sh 
+tree
+./clean.sh test/ white 
+tree
+vim clean.sh 
+./create.sh 
+./clean.sh test/ white 
+vim clean.sh 
+./clean.sh test/ white 
+./create.sh 
+./clean.sh test/ white 
+tree
+vim clean.sh 
+./clean.sh test/ white 
+./create.sh 
+./clean.sh test/ white 
+tree
+vim test/white 
+./clean.sh test/ white 
+vim test/white 
+./clean.sh test white 
+./clean.sh test/ white 
+./create.sh 
+./clean.sh test/ white 
+vim test/white 
+vim test/wh
+vim test/white
+./create.sh 
+./clean.sh test/ white 
+tree
+cat test/white 
+vim create.sh 
+vim clean.sh 
+vim create.sh 
+vim clean.sh 
+vim create.sh 
+./create.sh 
+./clean.sh test/ white 
+tree
+vim clean.sh 
+vim test/white 
+./create.sh 
+./clean.sh test/ white 
+tree
+vim test/white 
+vim clean.sh 
+./create.sh 
+./clean.sh test/ white 
+vim clean.sh 
+./clean.sh test/ white 
+./create.sh 
+./clean.sh test/ white 
+tree
+cd ..
+ls
+cd Q3
+ls
+vim parse_ifconfig.sh 
+sudo -s
+ls
+ls .ssh
+cat .ssh/id_rsa.pub >> .ssh/authorized_keys
+vim .ssh/authorized_keys 
+ls
+ssh-keygen -t rsa
+exit
+cd .ssh
+ls
+rm authorized_keys 
+cat id_rsa.pub >> .ssh/authorized_keys
+cat id_rsa.pub >> authorized_keys
+ls
+exit
+ls
+cd midterm/
+ls
+cd 9
+ls
+cd mid/
+ls
+cd Q4
+ls
+vim Q4_README.txt 
+vim README 
+cd ../
+cd ../..
+ls
+cd 14
+ls
+cd Q4
+ls
+vim README.txt 
+cd ../..
+ls
+cd 7
+ls
+cd ..
+cd 6
+ls
+cd Q3
+ls
+vim parse_ifconfig.sh 
+cd ..
+cd Q4
+ls
+vim README 
+cd midterm/
+cd 6
+ls
+cd Q4
+ls
+rm .README.swp 
+vim README 
+cd ..
+vim Q4/README 
+ls
+cd Q4
+ls
+cd ..
+cd Q3
+ls
+vim parse_ifconfig.sh 
+cd ..
+cd Q5
+ls
+vim README 
+cd ..
+cd Q3
+ls
+vim parse_ifconfig.sh 
+sudo -s 
+cd ..
+cd 7
+ls
+cd Q4
+ls
+vim README 
+cd ..
+cd 5
+ls
+cd team5/
+tree
+vim Q4
+ls
+tree
+vim Q1
+cd ..
+cd 4
+ls
+vim Q1/
+cd ..
+ls
+cd 3
+cd 2
+ls
+cd NASA/
+ls
+tree
+ls
+cd Q1/
+ls
+vim READEME 
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+cd 1
+ls
+tree nasa/
+vim Q4
+vim nasa/Q4/README 
+cd midterm/
+ls
+cd 2
+ls
+cd NASA/
+ls
+cd Q2
+ls
+vim clean.rb 
+vim clean.
+vim clean.sh 
+vim Q2
+vim clean.rb 
+cd ..
+ls
+cd Q3
+ls
+tree
+cd ..
+tree
+ls
+cd ..
+ls
+cd ..
+mv 2 2d
+ls
+ls -al
+cd 1
+ls
+cd nasa/
+ls
+cd Q2
+ls
+vim revision.sh 
+./revision.sh 
+vim revision.sh 
+./revision.sh 
+vim revision.sh 
+./revision.sh 
+ls
+tee
+ls
+vim create.sh
+chmod +x create.sh 
+vim whitelist.txt
+mv whitelist.txt white
+ls
+./create.sh 
+./revision.sh test/ white 
+tree
+ls
+cd ..
+ls
+cd Q5
+vim README 
+cd ..
+ls
+cd ..
+cd 4
+ls
+cd Q2
+ls
+vim clean.sh 
+su bean1014
+exit
+ls
+editor 
+sudo update-alternatives --config editor
+exit
+cd midterm/
+ls
+cd 4
+ls
+cd Q2
+ls
+vim clean.sh 
+vim create.sh
+vim whitelist.txt
+./clean.sh 
+vim clean.sh 
+./clean.sh 
+vim clean.sh 
+./clean.sh 
+cat whitelist.txt 
+vim clean.sh 
+cat whitelist.txt 
+./clean.sh 
+vim whitelist.txt 
+vim clean.sh 
+vim whitelist.txt 
+./clean.sh 
+vim clean.sh 
+./clean.sh 
+vim clean.sh 
+./clean.sh 
+vim clean.sh 
+./clean.sh 
+vim clean.sh 
+./clean.sh 
+vim clean.sh 
+./clean.sh 
+vim clean.sh 
+./clean.sh 
+vim clean.sh 
+./clean.sh 
+vim clean.sh 
+./clean.sh 
+vim clean.sh 
+./clean.sh 
+vim clean.sh 
+man rm
+ls
+vim clean.sh 
+chmod +x create.sh 
+./create.sh 
+ls
+vim clean.sh 
+mkdir test2
+mkdir test3
+mkdir test4
+./clean.sh 
+vim clean.sh 
+history 
+history |less
+ls
+vim /home/lilian/.bashrc 
+source ~/.bashrc 
+vim /home/lilian/.bashrc 
+source ~/.bashrc 
+vim /home/lilian/.bashrc 
+source ~/.bashrc 
+vim /home/lilian/.bashrc 
+source ~/.bashrc 
+ls
+./clean.sh 
+vim clean.sh 
+ls
+cd ..
+ls
+cd Q3
+ls
+vim readme.txt 
+sudo -s
+cd ..
+ls
+tree
+vim Q5/Readme.txt 
+ls
+cd ..
+cd 4
+cd Q6
+ls
+vim Readme
+cd ..
+ls
+cd ..
+cd 5
+ls
+cd team5/
+ls
+cd Q2
+ls
+vim clean.sh 
+ls
+vim clean.sh 
+exit
+cd midterm/5
+ls
+cd team5/
+ls
+tree
+vim Q1/README 
+vim Q2/clean.sh 
+cd Q2
+ls
+chmod +x clean.sh 
+cp ~/midterm/1/nasa/Q2/create.sh .
+cp ~/midterm/1/nasa/Q2/white .
+ls
+./create.sh 
+./clean.sh -h
+./clean.sh test/ white 
+ls
+tree
+vim clean.sh 
+ls
+cd ..
+ls
+cd Q3
+ls
+chmod +x parse_ifconfig.sh 
+sudo -s
+editor 
+tmux
+cd ..
+cd Q1
+ls
+vim README 
+sudo update-alternatives javac
+vim README 
+cd midterm/
+ls
+mv 5 5d
+ls
+ls -al
+cd 14
+ls
+cd Q4
+ls
+vim README.txt 
+ls
+mkdir /backup
+sudo mkdir /backup
+ls
+cd /b
+cd /backup
+ls
+ls -al
+sudo chown lilian /backup
+sudo chgrp lilian /backup
+ls -al
+cd 
+ls
+cd midterm/10
+cd 10/Q6
+ls
+vim full_backup.sh 
+./full_backup.sh ..
+tree /backup/
+rm /backup/date 
+ls
+cd ..
+ls
+cd ..
+ls
+cd 16
+ls
+cd team16/
+ls
+cd Q6
+ls
+cd ..
+cd 9
+ls
+cd mid/
+ls
+cd Q6
+ls
+vim full_backup.sh 
+mkdir test
+mkdir test2
+touch test/t1
+touch test/t2
+touch test2/t1
+ls
+chmod +x full_backup.sh 
+./full_backup.sh .
+./full_backup.sh test
+tree /backup/
+man tar
+tar -t /backup/20150512/test_20150512_0_fullbackup.tar.gz 
+tar tf /backup/20150512/test_20150512_0_fullbackup.tar.gz 
+tar ztf /backup/20150512/test_20150512_0_fullbackup.tar.gz 
+tar zxvf /backup/20150512/test_20150512_0_fullbackup.tar.gz 
+tree /backup/
+ls
+vim full_backup.sh 
+./full_backup.sh test
+tree /backup/20150512/
+tar ztf /backup/20150512/test_20150512_0_fullbackup.tar.gz 
+vim full_backup.sh 
+rm -rf /backup/20150512/
+ls
+tree /backup/
+cd 
+cd midterm/4/
+ls
+cd Q6
+ls
+vim Readme
+vim full_backup.sh 
+cd ../..
+cd 10
+ls
+cd 10
+ls
+cd Q6
+ls
+vim full_backup.sh 
+ls
+mkdir test
+mkdir test/test2
+touch test/test2/t1
+touch test/t2
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+ls
+rm test_20150512_.tar.gz 
+ls
+./full_backup.sh 
+ls
+vim full_backup.sh 
+ls
+./full_backup.sh test/
+./full_backup.sh test
+tree /backup/
+rm /backup/date 
+ls
+rm test_20150512_.tar.gz 
+ls
+vim full_backup.sh 
+ls
+vim full_backup.sh 
+tree /backup/
+./full_backup.sh test
+ls
+vim full_backup.sh 
+./full_backup.sh test
+vim full_backup.sh 
+basename 
+vim full_backup.sh 
+basename test
+man basename
+vim full_backup.sh 
+dirname test
+vim full_backup.sh 
+man cut
+exit
+cd /backup
+cd 20150512/
+ls
+cp test_20150512_0_fullbackup.tar.gz test_20150512_1_fullbackup.tar.gz 
+cp test_20150512_0_fullbackup.tar.gz test_20150512_2_fullbackup.tar.gz 
+exit
+cd midterm/10/10/Q6
+ls
+vim full_backup.sh 
+./full_backup.sh 
+./full_backup.sh test
+ls
+rm test_20150512_.tar.gz 
+ls
+tree /backup/
+rm /backup/date 
+vim full_backup.sh 
+./full_backup.sh test/
+tree /backup/date 
+vim full_backup.sh 
+./full_backup.sh test
+tree /backup/
+ls
+vim full_backup.sh 
+./full_backup.sh test
+rm /backup/*
+./full_backup.sh test
+vim full_backup.sh 
+tree /backup
+vim full_backup.sh 
+ls
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+tree /backup/20150512/
+tar ztf /backup/20150512/test_20150512_.tar.gz 
+vim full_backup.sh 
+mv /backup/20150512/test_20150512_0.tar.gz 
+mv /backup/20150512/test_20150512_.tar.gz /backup/20150512/test_20150512_0.tar.gz 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+ls /backup/20150512/
+mv /backup/20150512/test_20150512_0.tar.gz /backup/20150512/test_20150512_0_fullbackup.tar.gz 
+vim full_backup.sh 
+./full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+tmux
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+tree /backup/
+./full_backup.sh test/
+tree /backup/
+vim full_backup.sh 
+cd ..
+mv 9 9d
+mv 10 10d
+ls
+ls -al
+cd 4
+ls
+cd Q6
+ls
+ls -al
+vim full_backup.sh 
+mkdir test
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh 
+vim full_backup.sh test/
+vim full_backup.sh 
+ls
+rm /backup/*
+rm /backup/ls
+ls /backup/
+rm -rf /backup/*
+ls
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh 
+./full_backup.sh test/
+ls
+tree /backup/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test
+tree /backup/
+./full_backup.sh test
+tree /backup/
+vim full_backup.sh 
+tree /backup/
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+ls
+tree /backup/
+ls
+vim incremental_backup.sh 
+vim Readme
+vim incremental_backup.sh 
+./incremental_backup.sh 
+./incremental_backup.sh test/
+vim incremental_backup.sh 
+mkdir /backup/incbackup/
+touch /backup/incbackup/test_inbackup_0.tar.gz
+vim incremental_backup.sh 
+./incremental_backup.sh test/
+ls
+cd ..
+mv 4 4d
+ls
+ls -al
+cd 16
+ls
+cd team16/
+ls
+cd Q
+cd Q6
+ls
+vim full_backup.sh 
+./full_backup.sh test
+vim full_backup.sh 
+vim full_backup.sh test/
+./full_backup.sh test/
+vim full_backup.sh test/
+ls
+vim incremental_backup.sh 
+ls
+vim find_file.sh 
+ls
+cd ..
+ls
+cd ..
+mv 16 16d
+ls
+ls -al
+cd 1
+ls
+cd nasa/
+ls
+cd Q6
+ls
+vim full_backup.sh 
+mkdir test
+chmod +x full_backup.sh 
+./full_backup.sh test/
+mkdir test
+vim full_backup.sh 
+./full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+ls
+rm ~
+rm \~
+ls
+rmdir \~
+rm -rf \~
+ls
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+ls
+rm -rf \~
+ls
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+cd midterm/1/nasa/Q6/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+vim full_backup.sh 
+./full_backup.sh test/
+ls
+vim full_backup.sh 
+./full_backup.sh test/
+tree ~/backup/
+./full_backup.sh test/
+tree ~/backup/
+ls
+vim full_backup.sh 
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+cd 12
+ls
+cd Q6
+ls
+ls -al
+vim README 
+mkdir test2
+./full_backup.sh test2/
+./full_backup.sh test2
+./incremental_backup.sh test2
+touch test2/123
+./incremental_backup.sh test2
+touch test2/1234
+./incremental_backup.sh test2
+ls
+cd /backup/
+ls
+tar ztf test2_incbackup_1.tar.gz 
+tar ztf test2_incbackup_2.tar.gz 
+tar ztf test2_incbackup_4.tar.gz 
+tar ztf test2_incbackup_3.tar.gz 
+cd ~/midterm/12/
+ls
+cd Q6
+ls
+./find_backup_file.sh 
+./find_backup_file.sh -s -b /backup/test2_incbackup_2.tar.gz 1234
+./find_backup_file.sh -s -b /backup/test2_incbackup_2.tar.gz 123
+./find_backup_file.sh -x -b /backup/test2_incbackup_2.tar.gz 123
+ls
+rm 123_2015-05-13-12-39 
+ls
+vim README 
+cd ..
+cd 8
+sl
+ls
+cd Q6
+ls
+vim README 
+vim full_backup.sh 
+mkdir test3
+./full_backup.sh test3/
+./full_backup.sh test3
+vim full_backup.sh 
+./full_backup.sh test3
+vim full_backup.sh 
+./full_backup.sh test3
+vim full_backup.sh 
+./full_backup.sh test3
+vim full_backup.sh 
+./full_backup.sh test3
+vim full_backup.sh 
+./full_backup.sh test3
+vim full_backup.sh 
+./full_backup.sh test3
+exit
+ls
+cd midterm/
+ls
+cd 8
+ls
+cd Q6
+ls
+vim full_backup.sh 
+./full_backup.sh test3
+ls
+ls -al
+ls -l /backup/
+sudo chown lilian /backup/2015_05_13
+sudo chgrp lilian /backup/2015_05_13
+ls
+vim full_backup.sh 
+./full_backup.sh test3
+vim full_backup.sh 
+tree /backup
+vim full_backup.sh 
+./full_backup.sh test
+./full_backup.sh test3
+tree /backup
+./full_backup.sh test3
+tree /backup
+vim full_backup.sh 
+./full_backup.sh test3
+tree /backup/
+vim full_backup.sh 
+cd ..
+cd 
+cd midterm/11
+ls
+cd cache/
+ls
+cd Q6
+ls
+vim full_backup.sh 
+rm -rf /backup/*
+ls
+mkdir test
+./full_backup.sh test/
+tree /backup/
+./full_backup.sh test/
+tree /backup/
+./full_backup.sh test/
+tree /backup/
+./full_backup.sh test
+tree /backup/
+cd ..
+ls
+cd 7
+ls
+cd Q1
+ls
+vim README 
+ls
+cd ..
+ls
+cd Q2
+ls
+vim clean.sh 
+cd ..
+cd Q3
+ls
+cd ..
+cd Q6
+ls
+vim README 
+cd ..
+cd Q4
+ls
+vim README 
+ls
+touch ~/Q4
+cat "team7" >> ~/Q4
+echo "team7" >> ~/Q4
+ls
+cat README >> ~/Q4
+cd ..
+cd 1
+ls
+cd nasa/
+ls
+cd Q4
+ls
+echo "team1" >> ~/Q4 ; cat README >> ~/Q4
+cd ../../..
+ls
+cd 2
+ls
+cd 2d
+ls
+cd NASA/
+ls
+cd Q4
+ls
+echo "team2" >> ~/Q4 ; cat README >> ~/Q4
+ls
+cd ..
+cd 3
+ls
+cd 3d
+ls
+cd 3
+ls
+cd ..
+cd 4
+ls
+cd 4d
+ls
+cd ..
+cd 5
+ls
+cd 5
+cd 5d
+ls
+cd team5/
+ls
+cd Q4
+ls
+echo "team5" >> ~/Q4 ; cat README >> ~/Q4
+cd ..
+ls
+cd 6
+ls
+cd Q4
+ls
+echo "team6" >> ~/Q4 ; cat README >> ~/Q4
+cd ..
+ls
+cd 7
+sl
+ls
+cd Q4
+ls
+echo "team7" >> ~/Q4 ; cat README >> ~/Q4
+cd ../..
+ls
+cd 8
+ls
+cd Q4
+ls
+echo "team8" >> ~/Q4 ; cat README >> ~/Q4
+cd ../..
+ls
+cd 9d
+ls
+cd mid/
+ls
+cd Q4
+ls
+echo "team9" >> ~/Q4 ; cat README >> ~/Q4
+cd ..
+ls
+cd 10
+cd 102d
+cd 10d
+ls
+cd 1
+cd 10
+ls
+cd ..
+ls
+cd 11
+ls
+cd cache/
+ls
+cd Q4
+ls
+echo "team11" >> ~/Q4 ; cat README >> ~/Q4
+cd ..
+ls
+cd ..
+ls
+cd 12
+ls
+cd ..
+ls
+cd 13
+ls
+cd 13
+cd 13d
+ls
+cd nasa/
+ls
+cd Q4
+ls
+echo "team13" >> ~/Q4 ; cat README >> ~/Q4
+cd ..
+cd ../..
+ls
+cd 14
+ls
+cd Q4
+ls
+echo "team14" >> ~/Q4 ; cat README >> ~/Q4
+cat README.txt >> ~/Q4
+ls
+cd ../..
+ls
+cd 15
+cd 15d
+ls
+cd 15/
+ls
+cd Q4
+ls
+echo "team15" >> ~/Q4 ; cat README >> ~/Q4
+cd ../..
+cd ..
+ls
+cd 16
+ls
+cd 16d
+ls
+cd team16/
+ls
+cd Q4
+ls
+echo "team16" >> ~/Q4 ; cat README >> ~/Q4
+cd 
+ls
+vim Q4 
+cd midterm/
+ls
+cd 1
+ls
+cd nasa/
+ls
+cd Q5
+ls
+echo "team1" >> ~/Q5 ; cat README >> ~/Q5 ; echo "" >> ~/Q5
+cd ..
+ls
+cd 2
+ls
+cd 2d
+cd ..
+ls
+cd 6
+ls
+cd Q5
+ls
+echo "team6" >> ~/Q5 ; cat README >> ~/Q5 ; echo "" >> ~/Q5
+cd ../..
+ls
+cd 7
+ls
+cd ..
+cd 8
+ls
+cd Q5
+ls
+echo "team8" >> ~/Q5 ; cat README >> ~/Q5 ; echo "" >> ~/Q5
+cd ..
+ls
+cd ..
+ls
+cd 11
+ls
+cd cache/
+cd Q5
+ls
+echo "team11" >> ~/Q5 ; cat README >> ~/Q5 ; echo "" >> ~/Q5
+cd ..
+ls
+cd 12
+ls
+cd Q5
+ls
+echo "team12" >> ~/Q5 ; cat Q5README >> ~/Q5 ; echo "" >> ~/Q5
+cd ..
+ls
+cd ..
+sls
+cd 14
+cd Q5
+ls
+echo "team14" >> ~/Q5 ; cat README.txt >> ~/Q5 ; echo "" >> ~/Q5
+cd
+ls
+vim Q5
+ls
+cd midterm/
+ls
+cd 7
+ls
+cd ls
+cd Q6
+ls
+vim README 
+vim full_backup.sh 
+cd ..
+ls
+cd ..
+ls
+mv 1 1d
+ls
+mv 8 8d
+ls
+ls -al
+mv 11 11d
+ls
+mv 12 12d
+mv 14 14d
+ls
+ls -al
+ls
+cd 7
+ls
+cd Q2
+ls
+vim clean.sh 
+mkdir test
+mkdit -p test/test2
+mkdit -p test/test3
+mkdir -p test/test2
+mkdir -p test/test3
+mkdir -p test/test4
+ls
+chmod +x clean.sh 
+ls
+vim clean.sh 
+./clean.sh -h
+vim clean.sh 
+./clean.sh 
+vim clean.sh 
+ls
+vim white
+tree test/
+./clean.sh test/ white
+tree
+ls
+./clean.sh test white
+tere
+tree
+vim clean.sh 
+./clean.sh test white
+vim clean.sh 
+./clean.sh test white
+vim clean.sh 
+grep "test2" white 
+vim clean.sh 
+grep "test2" white 
+./clean.sh test white 
+vim clean.sh 
+./clean.sh test white 
+vim clean.sh 
+./clean.sh test white 
+vim clean.sh 
+tree
+vim clean.sh 
+./clean.sh test/ white 
+tree
+vim clean.sh 
+./clean.sh test/ white 
+ls
+./clean.sh 
+./clean.sh test/ white h
+./clean.sh test/ white 
+ls
+vim clean.sh 
+dirname test/
+vim clean.sh 
+./clean.sh test/ white 
+tree
+mkdir -p test/test4
+./clean.sh test white 
+tree
+vim clean.sh 
+cd ..
+ls
+cd Q6
+ls
+vim full_backup.sh 
+mkdit test
+mkdir test
+ls
+chmod +x full_backup.sh 
+./full_backup.sh test
+vim full_backup.sh 
+./full_backup.sh test
+ls
+vim full_backup.sh 
+./full_backup.sh test
+vim full_backup.sh test
+./full_backup.sh test
+tree /backup
+vim full_backup.sh test
+./full_backup.sh test/
+tree /backup/
+./full_backup.sh test
+tree /backup
+ls
+vim full_backup.sh 
+ls
+vim full_backup.sh 
+ls
+mkdir test2
+./full_backup.sh test2
+ls
+tree /backup/
+ls
+vim full_backup.sh 
+vim incremental_backup.sh 
+chmod +x incremental_backup.sh 
+./incremental_backup.sh 
+./incremental_backup.sh test2
+vim incremental_backup.sh 
+ls
+cd ..
+ls
+cd Q3
+ls
+sudo -s
+cd ../..
+ls
+cd 3
+ls
+cd 6
+ls
+cd Q3
+ls
+vim parse_ifconfig.sh 
+sudo -s
+cd midterm/
+cd 6
+ls
+cd Q3
+ls
+sudo -s
+sudo aptitude install lynx
+sudo aptitude install w3m
+sudo aptitude serarch browser
+sudo aptitude search browser | less
+w3m
+w3m localhost:8000
+w3m | less
+w3m
+w3m localhost
+w3m http://localhost:8000/
+vim .env
+vim config/app.php 
+php artisan env
+vim config/app.php 
+sudo service apache2 restart
+vim .env
+vim config/app.php 
+php artisan env
+cd /var/www
+ls
+rm info.php 
+sudo rm info.php 
+sudo mv blog proposal/
+exit
+cd laravel/blog/
+ls
+php -version
+php --version
+sudo aptitude upgrade php5
+aptitude search php5
+sudo aptitude update
+aptitude upgrade php5
+sudo aptitude upgrade php5
+sudo -s
+ls
+vim .env
+sudo a2enmod rewrite
+ls
+cd /var/www
+ls
+ls -al
+cd blog
+ls
+cd ~/laravel/blog/
+ls
+cd public/
+ls
+cp index.php index2.php
+rm index2.php
+cd /var/www
+man ln
+ln -s /home/lilian/laravel/blog/public/ blog
+ls
+ls -al
+laravel --help
+cd ..
+ls
+cd ~/laravel/blog/
+php artisan -version
+php artisan --version
+ls
+cd ..
+rm blog/ -rf
+laravel new blog --prefer-dist
+laravel new blog
+cd blog/
+ls
+cp .env.example .env
+vim .evn
+vim .env
+php artisan key:generate
+ls
+chmod +w vendor
+chmod +w storage/
+ls
+ls -al
+chmod a+w storage/
+chmod a+w vendor/
+ls
+ls -al
+cd ..
+cd blog/
+ls
+rm readme.md 
+ls
+ls -al
+ls
+rm .gitignore 
+ls
+ls -al
+php artisan optimize
+vim .env
+vim config/app.php 
+vim .env
+sudo -s
+php artisan serve
+tmux
+exit
+cd ir
+ls
+mkdir hw2
+cd hw2/
+wget https://ceiba.ntu.edu.tw/course/3f10ec/hw/Programming-HW2.zip
+unzip Programming-HW2.zip 
+ls
+cd Programming-HW2/
+ls
+unzip dataset.zip 
+ls
+vim stanford-08-03.
+vim stanford-08-03.graph 
+vim stanford-08-03.pagerank 
+mkdir codebase
+cd codebase/
+ls
+vim test.py
+vim test.py 
+rm test.py 
+vim executePR.py
+vim executePR.sh
+mv executePR.py computePR.py
+chmod +x executePR.sh 
+./executePR.sh -d 0.85 -e 0.01 -o output inputfile
+vim computePR.py 
+./executePR.sh -d 0.85 -e 0.01 -o output inputfile
+vim computePR.py 
+./executePR.sh -d 0.85 -e 0.01 -o output inputfile
+vim computePR.py 
+./executePR.sh -d 0.85 -e 0.01 -o output inputfile
+vim computePR.py 
+./executePR.sh -d 0.85 -e 0.01 -o output inputfile
+vim computePR.py 
+./executePR.sh -d 0.85 -e 0.01 -o output inputfile
+vim computePR.py 
+./executePR.sh -d 0.85 -e 0.01 -o output inputfile
+vim computePR.py 
+./executePR.sh -d 0.85 -e 0.01 -o output inputfile
+vim computePR.py 
+./executePR.sh -d 0.85 -e 0.01 -o output inputfile
+vim computePR.py 
+./executePR.sh -d 0.85 -e 0.01 -o output inputfile
+vim computePR.py 
+./executePR.sh -d 0.85 -e 0.01 -o output 
+./executePR.sh -d 0.85 -e 0.01 -o output inputfile
+vim computePR.py 
+./executePR.sh -d 0.85 -e 0.01 -o output inputfile
+vim computePR.py 
+./executePR.sh -d 0.85 -e 0.01 -o output inputfile
+vim computePR.py 
+vim executePR.sh 
+vim computePR.py 
+ls ..
+vim computePR.py 
+vim executePR.sh 
+./executePR.sh 
+vim executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+vim /home/lilian/ir/code/test.py 
+vim computePR.py 
+./c
+./executePR.sh 
+./c
+vim computePR.py 
+./c
+./executePR.sh 
+./c
+vim computePR.py 
+./c
+./executePR.sh 
+vim executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+ls
+vim matrix_dump.npz 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+ls
+vim matrix_dump.npz 
+vim executePR.sh 
+vim computePR.py 
+vim executePR.sh > testoutput.txt
+cd ir/hw2/Programming-HW2/codebase/
+ls
+./executePR.sh > testoutput.txt 
+tmux
+exit
+cd ir/hw2/Programming-HW2/codebase/
+ls
+vim testoutput.txt 
+ls
+vim computePR.py 
+tmux attac
+exit
+cd ir/hw2/Programming-HW2/codebase/
+tmux attach
+exit
+tmux
+tmux attach
+ls
+tail testoutput.txt 
+vim computePR.py 
+git commit .
+git add .
+git commit
+exit
+./executePR.sh > testoutput.txt 
+vim computePR.py 
+./executePR.sh 
+./executePR.sh > testoutput.txt 
+ls
+vim computePR.py 
+./executePR.sh > testoutput.txt 
+vim computePR.py 
+./executePR.sh > testoutput.txt 
+vim computePR.py 
+./executePR.sh > testoutput.txt 
+vim computePR.py 
+vim executePR.sh 
+python
+computePR
+ipython
+./executePR.sh 
+vim computePR.py
+./executePR.sh > testoutput.txt 
+vim computePR.py
+./executePR.sh 
+vim computePR.py
+./executePR.sh 
+ls
+vim computePR.py
+./executePR.sh 
+vim computePR.py
+./executePR.sh 
+./executePR.sh > testoutput.txt 
+vim testoutput.txt 
+vim executePR.sh 
+vim computePR.py
+./executePR.sh > testoutput.txt 
+vim testoutput.txt 
+ls
+vim executePR.sh 
+vim matrix_dump
+ls -al
+ls -alh
+vim computePR.py
+./executePR.sh > testoutput.txt 
+ls -alh
+vim matrix_dump
+vim testoutput.txt 
+diff testoutput.txt rrr 
+rm rrr 
+ls
+rm computePR.pyc 
+ls
+git init
+git add .
+git commit
+ls
+vim .gitignore
+rm matrix_dump.np
+rm matrix_dump.np*
+ls
+git commit
+git add .
+git commit
+ls
+./executePR.sh testoutput.txt 
+./executePR.sh > testoutput.txt 
+ls
+vim computePR.py 
+./executePR.sh 
+./executePR.sh > testoutput.txt 
+vim testoutput.txt 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh > testoutput.txt 
+vim testoutput.txt 
+vim executePR.sh 
+vim computePR.py 
+./executePR.sh > testoutput.txt 
+vim testoutput.txt 
+vim computePR.py 
+./executePR.sh > testoutput.txt 
+vim testoutput.txt 
+vim computePR.py 
+./executePR.sh > testoutput.txt 
+vim testoutput.txt 
+vim computePR.py 
+vim testoutput.txt 
+vim computePR.py 
+vim testoutput.txt 
+vim computePR.py 
+./executePR.sh > testoutput.txt 
+vim testoutput.txt 
+vim computePR.py 
+vim executePR.sh 
+./executePR.sh > testoutput.txt 
+vim executePR.sh 
+vim computePR.py 
+vim executePR.sh 
+./executePR.sh > testoutput.txt 
+vim computePR.py 
+git commit
+git add
+git add .
+git commit
+ls
+./executePR.sh > testoutput.txt 
+vim computePR.py 
+./executePR.sh > testoutput.txt 
+vim computePR.py 
+./executePR.sh > testoutput.txt 
+vim testoutput.txt 
+vim executePR.sh 
+vim computePR.py 
+vim executePR.sh 
+./executePR.sh 
+vim executePR.sh 
+vim computePR.py 
+vim executePR.sh 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+ls
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh > testoutput.txt 
+vim testoutput.txt 
+vim computePR.py 
+vim testoutput.txt 
+vim computePR.py 
+vim testoutput.txt 
+./executePR.sh > testoutput.txt 
+vim testoutput.txt 
+vim ../stanford-08-03.pagerank 
+ls
+vim computePR.py 
+vim ../stanford-08-03.pagerank testoutput.txt 
+vim ../stanford-08-03.pagerank 
+vim computePR.py 
+./executePR.sh > testoutput.txt 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh
+vim testoutput.txt 
+vim computePR.py 
+exit
+top
+htop
+exit
+tmux attach
+exit
+ssh r03922093@linux1.csie.org
+vim /etc/default/grub 
+vim /boot/grub/grub.cfg 
+sudo update-grub
+ssh b99902010@intern.csie.ntu.edu.tw
+php artisan serve
+tmux attach
+ls
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+ls
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+./executePR.sh > testoutput.txt 
+vim testoutput.txt 
+exit
+ls
+cd ir/
+cd hw2/Programming-HW2/codebase/
+ls
+tmux
+tmux attach
+ls
+vim testoutput.txt 
+./executePR.sh > test2.txt
+vim test2.txt 
+vim computePR.py 
+git add .
+git commit
+vim computePR.py 
+tmux
+tmux attach
+exit
+vim computePR.py 
+git add .
+git commit
+cd ..
+ls
+cd result/
+ls
+cd ..
+cd codebase/
+ls
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+vim computePR.py 
+vim ../../../code/test.py 
+vim computePR.py 
+vim executePR.sh 
+./executePR.sh 
+vim computePR.py 
+./executePR.sh 
+ls
+cd ../result/
+ls
+vim R03922093.pagerank
+vim R03922093.pagerank3 
+vim R03922093.pagerank
+vim R03922093.pagerank1 
+cd ../codebase/
+ls
+vim computePR.py 
+vim executePR.sh 
+./executePR.sh 
+ls
+cd ../result/
+tail R03922093.pagerank3 
+ls
+git init
+git add .
+git commit
+ls
+cd ..
+ls
+exit
+ls
+cd ..
+ls
+cd result/
+ls
+vim R03922093.pagerank2 
+cd ..
+cd eval-pagerank-0.2/
+./eval-pagerank ../stanford-08-03.pagerank ../result/R03922093.pagerank2 
+exit
+./executePR.sh > test2.txt 
+vim test2.txt 
+vim executePR.sh 
+vim computePR.py 
+./executePR.sh > test2.txt 
+vim test2.txt 
+vim computePR.py 
+./executePR.sh > test2.txt 
+ls
+vim test2.txt 
+vim computePR.py 
+vim executePR.sh 
+./executePR.sh > test2.txt 
+vim computePR.py 
+./executePR.sh > test2.txt 
+vim test2.txt 
+cd ..
+ls
+ls eval-pagerank-0.2/
+cd eval-pagerank-0.2/
+ls
+make
+ls
+./eval-pagerank ../stanford-08-03.pagerank ../codebase/test2.txt 
+ls
+cd ..
+ls
+man tar
+man gzip 
+gzip -d cs.stanford.2004-10.graph.gz 
+gzip -d 03-2006-wk3.graph.gz 
+ls -al
+rm dataset.zip 
+ls
+ls -al
+cd codebase/
+ls
+cd ..
+mkdir result
+ls
+cd codebase/
+ls
+rm testoutput.txt 
+rm test2.txt 
+ls
+rm matrix_dump 
+mv R03922093.pagerank1 ../result/
+ls
+vim executePR.sh 
+cd 
+cd ir/hw2/Programming-HW2/
+ls
+ls | grep graph
+ls | grep graph >> codebase/executePR.sh 
+cd codebase/
+ls
+vim executePR.sh 
+./executePR.sh 
+vim computePR.py 
+htop
+exit
+python
+exit
+tmux attach
+exit
+cd ir
+ls
+cd hw2/
+cd Programming-HW2/
+ls
+cd ..
+mkdir newdata
+cd newdata/
+wget https://ceiba.ntu.edu.tw/course/3f10ec/hw/Programming-HW2-v2.zip
+unzip Programming-HW2-v2.zip 
+ls
+cd Programming-HW2/
+ls
+cd ..
+ls
+cd Programming-HW2/
+ls
+cd codebase/
+cd ../../newdata/Programming-HW2/
+ls
+unzip dataset.zip 
+ls
+gzip -d 03-2006-wk3.graph.gz 
+gzip -d cs.stanford.2004-10.graph.gz 
+ls
+rm dataset.zip 
+ls
+mkdir dataset
+mv *.graph dataset/
+ls
+cd eval-pagerank-0.2/
+ls
+make
+ls
+cd ..
+ls
+cp -r ../../Programming-HW2/codebase/ .
+ls
+cd codebase/
+ls
+vim executePR.sh 
+cd ..
+ls
+mkdir result
+ls
+cd ../
+cd Programming-HW2/
+ls
+cd codebase/
+ls
+vim executePR.sh 
+./executePR.sh 
+ls
+cd ..
+ls
+cd result/
+ls
+vim R03922093.pagerank1 
+ls
+cd ..
+cd codebase/
+ls
+vim executePR.sh 
+cd ..
+cd eval-pagerank-0.2/
+ls
+./eval-pagerank ../stanford-08-03.pagerank ../result/R03922093.pagerank2
+ls
+cd ../codebase/
+ls
+vim computePR.py 
+./executePR.sh w
+vim computePR.py 
+./executePR.sh 
+ls
+cd ..
+cd eval-pagerank-0.2/
+./eval-pagerank ../stanford-08-03.pagerank ../result/R03922093.pagerank2
+vim ../stanford-08-03.pagerank
+ls
+cd ..
+ls
+cd codebase/
+ls
+vim computePR.py 
+./executePR.sh > test.txt
+vim test.txt 
+ls
+vim test.txt 
+head ../dataset/stanford-08-03.graph 
+vim test.txt 
+eval "35004-349966`
+ç
+`
+`
+"
+
+eval "35004-349966"
+eval 35004-34996
+expr "35004-349966"
+expr 35004-349966
+man expr
+expr 35004 - 349966
+expr 35004 - 34966
+ls
+cd ../eval-pagerank-0.2/
+ls
+./eval-pagerank ../stanford-08-03.pagerank ../result/R03922093.pagerank2
+ls
+cd ../codebase/
+vim computePR.py 
+./executePR.sh 
+ls
+vim computePR.py 
+./executePR.sh 
+vim test.txt 
+vim computePR.py 
+./executePR.sh 
+cd ..
+cd eval-pagerank-0.2/
+./eval-pagerank ../stanford-08-03.pagerank ../result/R03922093.pagerank2
+ls
+cd ..
+ls
+cd codebase/
+ls
+rm test.txt 
+ls
+touch compilePR.sh
+ls
+chmod +x comp
+chmod +x compilePR.sh 
+git add .
+git commit
+ls
+vim executePR.sh 
+./executePR.sh 
+cd ..
+cd eval-pagerank-0.2/
+./eval-pagerank ../stanford-08-03.pagerank ../result/R03922093.pagerank2
+exit
