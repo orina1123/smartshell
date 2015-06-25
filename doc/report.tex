@@ -10,7 +10,7 @@
 \usepackage{listings}
 %\usepackage{url}
 %\usepackage[unboxed,small]{cwpuzzle}
-\usepackage[left=2cm,right=2cm,top=3cm,bottom=2.5cm]{geometry}
+\usepackage[left=1.5cm,right=1.5cm,top=2cm,bottom=2.5cm]{geometry}
 %\usepackage[inline]{enumitem}
 %\setitemize{listparindent=\parindent}
 \usepackage{indentfirst}
@@ -37,6 +37,9 @@
 \end{CJK}
 \end{center}
 \section*{Introduction}
+\begin{center}
+\includegraphics[scale=0.6]{1.png}
+\end{center}
 While working with Bash, it is tedious for most of the users to type repeated commands. 
 Even with the Bash build-in auto-completion feature, sufficient characters must be provided to solve ambiguity of prefix.
 If the commands can be auto-completed with just a few number of characters typed, it saves a lot of time. 
@@ -45,7 +48,7 @@ it still work especially when users are coding or doing another work which will 
 The common solution for this condition is reverse search, 
 which only find the latest commands of whose prefix corresponds to what the user just type. 
 However, it still left something to be desired. 
-Therefore, we introduce a better shell which can preform customized auto-completion with information extracted from user history instead of just finding the latest one.
+Therefore, we introduce a better shell which can preform customized auto-completion with information extracted from user history.
 
 \section*{Problem definition}
 What we want to do is to introduce a "smarter" auto-completion shell based on command history.
@@ -68,7 +71,7 @@ We proposed a probabilistic model to perform command prediction.
 The flow of our method is as follow.
 \par
 The training data is from user history file. 
-We maintain a window of N commands, in practice N = 500. 
+We maintain a window of N commands. 
 In the window we compute probabilities for each commands right after another commands. 
 For examples, if the training data is "ABCBCD", it implies that C probably appears right after B.
 So if the previous command is B, we can predict that the next one is C.
@@ -83,8 +86,6 @@ The system generates a command candidate list by prefix-match of the user input 
 The candidate list is sorted by the conditional probability described above.
 One point we do better than reverse search is that we can predict without any input base on previous commands. 
 Once the users want to type another different with our prediction, then we change our result from the input prefix.
-Unless what users want to type cannot be found in the history file, 
-our system can predict correct command with sufficient prefix.
 The window then moves as new commands add to the history and compute another probability table for another auto-completion.
 \par
 According to research before[1], we adopt this probability model due to the high accuracy. 
@@ -98,13 +99,11 @@ That paper is mentioned that it takes some factors such as times in one day or o
 we think user may work in different time, but follow his/her own habits.
 That's why we compute probabilities from users' history file. 
 We hope our auto-completion can maintain high accuracy for every different user. 
-In computation, to make our bash realtime, we adopt a simple way that just compute how many times commands follow another. 
-
 
 
 \section*{Implementation}
 The sliding window stated above is implemented in a C++ class HistoryWindow. The class provide methods to update window content, query command counts and generate candidate list.
-When a new command is entered, the window moves and we dynamically update the counts. The oldest command leaves with its count decremented, and the newest command entered with its count incremented.
+When a new command is entered, the window moves. The oldest command leaves with its count decremented, and the newest command comes with its count incremented. The dynamic update of command counts prevented re-calculation of all probabilities every time the window moves and make the prediction real-time.
 \par
 To let bash apply our custom completion predict list, 
 we implement our completion function for bash, by api of the GNU Readline Library. 
@@ -122,31 +121,29 @@ to predict and then generate the possible list.
 The figure below illustrate the flow of our program.
 In the left side of this figure, there are arrows with keys, 
 which are the binded with the functions we implement. 
-Ctrl-n and ctrl-p not are to change the current completion command to the next/previous result.
+When tab is pressed, our program as HistoryWindow to provide sorted command candidate list, and complete the input line of the first candidate.
+Ctrl-n and ctrl-p not are to change the current completion command to the next/previous candidate.
 Then, the completion our implemented are all with arguments, so we implement the new functionality of delete
 all the line except the "command", which is Ctrl-k.
-Since we simply use system() to execute the command, 
-we have to process the path of working directory changes on our own.
+Since we simply use system() to execute the command, we have to process the path of working directory changes on our own.
 That's what the right side of this figure presents.
 \\
 \begin{center}
 \includegraphics[scale=0.6]{pic.png}
 \end{center}
 \section*{Result}
-To evaluate the prediction list from our model, we use a history file with about 1500~2000 commands, 
-choose 500 commands as training data, fill the partial text of the next command,
+To evaluate the prediction list from our model, we use a history file with about 1500~2000 commands, fill the partial text of the next command,
 and then perform our probabilistic model and reverse search to get 2 prediction commands.
-
-We compare with 3 results of the 2 commands.
-One is the accuracy of our model performing on no input partial command text, 
-another is the accuracy of our model performing on half partial command text,
-and the other is the accuracy of performing reverse search on half partial command text.
+We compare 3 type of results.
+One is the accuracy on no input partial command text, 
+another is the accuracy on half partial command text,
+and the other is the accuracy of reverse search on half partial command text.
+The following table show the result of window size N = 500.
 
 %result table
 
 \begin{table}[h]
 \centering
-\caption{My caption}
 \label{my-label}
 \begin{tabular}{l|lll}
                          & \begin{tabular}[c]{@{}l@{}}Prob. model\\ (with no input)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Prob. model\\ (with half cmd input)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Reverse search\\ (with half cmd input)\end{tabular} \\ \hline
@@ -155,13 +152,21 @@ lilian\_desktop\_history & 0.444706                                             
 lilian\_lab\_history     & 0.483529                                                              & 0.517015                                                                    & 0.497647                                                                      
 \end{tabular}
 \end{table}
+The below line graphs illustrate the effect of different window size N. The first two graph is for prediction with arguments, and the third one is for prediction of the command only (without argument).
+\begin{center}
+\includegraphics[scale=0.55]{line1.png}
+\includegraphics[scale=0.55]{line2.png}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.55]{line3.png}
+\end{center}
 
 
 \section*{Results references}
-After experiments, we find that our method gets almost the same or worse performance than reverse search. 
-Because when our method cannot find any possible prediction, it output nothing.
+After experiments, we found that our method gets almost the same or worse performance than reverse search. 
+That is because when our method cannot find any possible prediction, it returns nothing.
 On the other hand, reverse search can always find a prediction.
-So we combine our method and reverse search only when our method cannot find any probability greater than 0,
+So we combine our method and reverse search only when our method cannot find any command with probability greater than 0,
 we adopt reverse search as our method. 
 To our surprise, it gets better performance than both methods, especially only take command into account. 
 In the research before[1], it also suggests combination leads to better result. 
@@ -169,10 +174,8 @@ Due to different user habits for everyone,
 combination of methods can find the best prediction which is corresponding to user's habit with less bias.
 
 \section*{Future work}
-
-The model now use static configuration with fixed windows size.
-For different user has different command typing pattern, 
-the result can be improved when applying dynamic configuration.
+We adopt a sliding window to lower the effect of older commands, but the point of time of each command should also serves as a good clue of user work period and should be take into consideration.
+In addition, it will be more attractive that we can predict command arguments that have never appeared. For example, we would like to predict the next command of "vim test.c" to be "gcc test.c" even if it is the first time the user compile the source.
 
 \section*{Job responsibility of members}
 
@@ -193,12 +196,12 @@ We had some meetings in CSIE Building before the due date of milestones.
 Whenever someone finish one functionality, 
 the others will run the program and check whether there are bugs in short time.
 Besides, we devided the task clearly in the first, 
-so that we had less conflict when merging code.
+so that we had less conflict when merging codes.
 
 \section*{References}
 \begin{enumerate}
-\item http://papersdb.cs.ualberta.ca/~papersdb/uploaded\_files/712/paper\_korvemaker00predicting.pdf
-\item http://www.eecs.harvard.edu/hube/publications/durant-predict.pdf
+\item Korvemaker, Benjamin, and Russell Greiner. "Predicting Unix command lines: adjusting to user patterns." AAAI/IAAI. 2000.
+\item Durant, Kathleen T., and Michael D. Smith. "Predicting unix commands using decision tables and decision trees." Proceedings of the Third International Conference on Data Mining. 2004.
 \end{enumerate}
 
 \section*{Source Code}
