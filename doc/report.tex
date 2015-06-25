@@ -38,6 +38,7 @@
 \end{center}
 \section*{Introduction}
 While working with Bash, it is tedious for most of the users to type repeated commands. 
+Even with the Bash build-in auto-completion feature, sufficient characters must be provided to solve ambiguity of prefix.
 If the commands can be auto-completed with just a few number of characters typed, it saves a lot of time. 
 Although around 72\%, according to the past research [1], of the commands can be predicted from history file, 
 it still work especially when users are coding or doing another work which will type repeated commands in a period. 
@@ -63,11 +64,11 @@ Besides, since our implementation is a improved shell, we regard usability as an
 Our ultimate goal is to work with shell easily.
 
 \section*{Proposed methods}
-We proposed a probabilistic model, the C++ class HistoryWindow.
-The flow of get the probabilities of commands is the following.
+We proposed a probabilistic model to perform command prediction.
+The flow of our method is as follow.
 \par
 The training data is from user history file. 
-We implemented a C++ class HistoryWindow to maintain a window of N commands, in practice 500. 
+We maintain a window of N commands, in practice N = 500. 
 In the window we compute probabilities for each commands right after another commands. 
 For examples, if the training data is "ABCBCD", it implies that C probably appears right after B.
 So if the previous command is B, we can predict that the next one is C.
@@ -76,9 +77,11 @@ We compute probabilities with how many times it appears.
 When a new command is entered, the window moves and we dynamically update the counts. The oldest command leaves with its count decremented, and the newest command entered with its count incremented.
 In the example "ABCBCD", the probability "C right after B" is 2/2 = 100\%, 
 "B right after A" and "B right after C" are both 1/2 = 50\%. 
+We maintain seperated set of counts for "command only" and "command with arguments".
 Not only right previous one, we take previous 3 commands with different coefficient representing different weight to improve our result.
 In the boundary case, the coefficient set to 0 can avoid another commands' effects. 
-After computation for probabilities, the system then gets input from users and try to auto-complete for users.
+The system generates a command candidate list by prefix-match of the user input and all the commands ever entered by user.
+The candidate list is sorted by the conditional probability described above.
 One point we do better than reverse search is that we can predict without any input base on previous commands. 
 Once the users want to type another different with our prediction, then we change our result from the input prefix.
 Unless what users want to type cannot be found in the history file, 
@@ -100,21 +103,21 @@ In computation, to make our bash realtime, we adopt a simple way that just compu
 
 
 
-\section*{Implementaion}
+\section*{Implementation}
 To let bash apply our custom completion predict list, 
 we implement our completion function for bash, by api of the GNU Readline Library. 
-GNU Readline Library provides api of reading a line from input (just like shell prompt), 
-we can bind keys for different functions like deleting a word, 
+GNU Readline Library provides api of reading a line from input (just like shell prompt).
+We can bind keys for different functions like deleting a word, 
 moving cursor to the head of the line or getting some possible command 
 based on the partial command text in current line prompt. 
-Furthermore, this library provided some mechanism to let user can implement custom functions 
+Furthermore, this library provided some mechanism to let user implement custom functions 
 and bind the key to specific function that the user wants. 
 By the library, we implement our completion function, 
 where the list of the possible command completion is from our HistoryWindow class, 
 which learns from the bash command history and uses the partial command text 
 to predict and then generate the possible list.
 \par
-The figure following is the flow of our program.
+The figure below illustrate the flow of our program.
 In the left side of this figure, there are arrows with keys, 
 which are the binded with the functions we implement. 
 Ctrl-n and ctrl-p not are to change the current completion command to the next/previous result.
