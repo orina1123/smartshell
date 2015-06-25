@@ -74,7 +74,6 @@ For examples, if the training data is "ABCBCD", it implies that C probably appea
 So if the previous command is B, we can predict that the next one is C.
 We set the window size because the older history has less effect on the current work. 
 We compute probabilities with how many times it appears.
-When a new command is entered, the window moves and we dynamically update the counts. The oldest command leaves with its count decremented, and the newest command entered with its count incremented.
 In the example "ABCBCD", the probability "C right after B" is 2/2 = 100\%, 
 "B right after A" and "B right after C" are both 1/2 = 50\%. 
 We maintain seperated set of counts for "command only" and "command with arguments".
@@ -104,6 +103,9 @@ In computation, to make our bash realtime, we adopt a simple way that just compu
 
 
 \section*{Implementation}
+The sliding window stated above is implemented in a C++ class HistoryWindow. The class provide methods to update window content, query command counts and generate candidate list.
+When a new command is entered, the window moves and we dynamically update the counts. The oldest command leaves with its count decremented, and the newest command entered with its count incremented.
+\par
 To let bash apply our custom completion predict list, 
 we implement our completion function for bash, by api of the GNU Readline Library. 
 GNU Readline Library provides api of reading a line from input (just like shell prompt).
